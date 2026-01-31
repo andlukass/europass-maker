@@ -1,62 +1,60 @@
 {
     "personal": {
-      "photoPath": "",
+      "photoPath": "1.png",
       "name": "Lucas Ribeiro da Silva Santos Paim",
       "nationality": "Italian",
       "email": "kamilogou@gmail.com",
       "phone": "+393314311214",
+      "sex": "Masculino",
       "address": "Via Panfilo Nuvolone, 16, Cremona, Italy"
     },
     "sections": {
-      "experience": {
-        "items": [
-          {
-            "from": "01/2024",
-            "to": "09/2024",
-            "country": "Bruxelas, Bélgica",
-            "role": "Construction Assistant",
-            "company": "Cronica Vitalicia",
-            "bullets": []
-          },
-          {
-            "from": "04/2021",
-            "to": "01/2022",
-            "country": "Braga, Portugal",
-            "role": "Delivery Driver",
-            "company": "CTT",
-            "bullets": []
-          },
-          {
-            "from": "2016",
-            "to": "2021",
-            "country": "Corte Madera, USA",
-            "role": "Assistant Cook",
-            "company": "Stefano's Pizza",
-            "bullets": []
-          }
-        ]
-      },
-      "education": {
-        "items": [
-          {
-            "title": "Ensino Médio",
-            "institution": "Colégio Assunção - Goiânia, Goiás - Brasil"
-          }
-        ]
-      },
-      "languages": {
-        "nativeLanguage": "Português"
-      },
-      "skills": {
-        "items": [
-          "Communication",
-          "Proactivity",
-          "Teamwork",
-          "Social Media Management",
-          "Organization",
-          "Flexibility",
-          "English (Advanced)"
-        ]
-      }
+      "experience": [
+        {
+          "from": "01/2024",
+          "to": "09/2024",
+          "country": "Bruxelas, Bélgica",
+          "role": "Construction Assistant",
+          "company": "Cronica Vitalicia",
+          "bullets": []
+        },
+        {
+          "from": "04/2021",
+          "to": "01/2022",
+          "country": "Braga, Portugal",
+          "role": "Delivery Driver",
+          "company": "CTT",
+          "bullets": []
+        },
+        {
+          "from": "2016",
+          "to": "2021",
+          "country": "Corte Madera, USA",
+          "role": "Assistant Cook",
+          "company": "Stefano's Pizza",
+          "bullets": []
+        }
+      ],
+      "education": [
+        {
+          "title": "Ensino Médio",
+          "institution": "Colégio Assunção - Goiânia, Goiás - Brasil"
+        }
+      ],
+      "languages": [
+        {
+          "language": "Português",
+          "level": "Nativo"
+        }
+      ],
+      "skills": [
+        "Communication",
+        "Proactivity",
+        "Teamwork",
+        "Social Media Management",
+        "Organization",
+        "Flexibility",
+        "English (Advanced)"
+      ]
     }
   }

@@ -32,7 +32,7 @@ Perguntas:
    - Objetivo profissional (texto)
    - Experiência profissional (lista: datas, país, cargo, empresa, responsabilidades)
    - Educação e formação (lista: título, instituição)
-   - Competências linguísticas (língua nativa)
+   - Competências linguísticas (lista: língua, nível)
    - Habilidades (lista de bullets)
 
 No final, a configuração é guardada em `configs/cv-config.json` e o PDF em `cv-europass.pdf`.
@@ -87,30 +87,24 @@ node dist/index.js --config configs/cv-config.example.json --out meu-cv.pdf
   "sections": {
     "presentation": { "text": "Texto de apresentação..." },
     "objective": { "text": "Objetivo profissional." },
-    "experience": {
-      "items": [
-        {
-          "from": "2019",
-          "to": "2024",
-          "country": "Portugal",
-          "role": "Título do Cargo",
-          "company": "Nome da Empresa",
-          "bullets": ["Responsabilidade 1.", "Responsabilidade 2."]
-        }
-      ]
-    },
-    "education": {
-      "items": [
-        {
-          "title": "Ensino Secundário Completo (12º)",
-          "institution": "Nome da Escola"
-        }
-      ]
-    },
-    "languages": { "nativeLanguage": "Português" },
-    "skills": {
-      "items": ["Habilidade 1", "Habilidade 2"]
-    }
+    "experience": [
+      {
+        "from": "2019",
+        "to": "2024",
+        "country": "Portugal",
+        "role": "Título do Cargo",
+        "company": "Nome da Empresa",
+        "bullets": ["Responsabilidade 1.", "Responsabilidade 2."]
+      }
+    ],
+    "education": [
+      {
+        "title": "Ensino Secundário Completo (12º)",
+        "institution": "Nome da Escola"
+      }
+    ],
+    "languages": [ { "language": "Português", "level": "Materna" } ],
+    "skills": ["Habilidade 1", "Habilidade 2"]
   }
 }
 ```

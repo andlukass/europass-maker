@@ -15,6 +15,11 @@ export interface EducationItem {
   institution?: string;
 }
 
+export interface LanguageItem {
+  language: string;
+  level: string;
+}
+
 export interface CvConfig {
   outputPdf?: string;
   logoPath?: string;
@@ -30,18 +35,10 @@ export interface CvConfig {
   sections: {
     presentation?: { text: string };
     objective?: { text: string };
-    experience?: {
-      items: ExperienceItem[];
-    };
-    education?: {
-      items: EducationItem[];
-    };
-    languages?: {
-      nativeLanguage?: string;
-    };
-    skills?: {
-      items: string[];
-    };
+    experience?: ExperienceItem[];
+    education?: EducationItem[];
+    languages?: LanguageItem[];
+    skills?: string[];
   };
 }
 

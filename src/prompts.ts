@@ -1,5 +1,5 @@
 import prompts from 'prompts';
-import type { CvConfig, ExperienceItem, EducationItem } from './model.js';
+import type { CvConfig, ExperienceItem, EducationItem, LanguageItem } from './model.js';
 
 export async function runInteractivePrompts(): Promise<CvConfig> {
   const config: CvConfig = {
@@ -116,7 +116,7 @@ export async function runInteractivePrompts(): Promise<CvConfig> {
     initial: false,
   });
   if (hasExperience.value) {
-    config.sections.experience = { items: await askExperienceItems() };
+    config.sections.experience = await askExperienceItems();
   }
 
   const hasEducation = await prompts({
@@ -126,7 +126,7 @@ export async function runInteractivePrompts(): Promise<CvConfig> {
     initial: false,
   });
   if (hasEducation.value) {
-    config.sections.education = { items: await askEducationItems() };
+    config.sections.education = await askEducationItems();
   }
 
   const hasLanguages = await prompts({
@@ -136,15 +136,7 @@ export async function runInteractivePrompts(): Promise<CvConfig> {
     initial: false,
   });
   if (hasLanguages.value) {
-    const native = await prompts({
-      type: 'text',
-      name: 'value',
-      message: 'Língua nativa',
-      initial: 'Português',
-    });
-    config.sections.languages = {
-      nativeLanguage: String(native.value ?? '').trim() || 'Português',
-    };
+    config.sections.languages = await askLanguageItems();
   }
 
   const hasSkills = await prompts({
@@ -154,7 +146,7 @@ export async function runInteractivePrompts(): Promise<CvConfig> {
     initial: false,
   });
   if (hasSkills.value) {
-    config.sections.skills = { items: await askBulletList('Habilidade (linha vazia termina)') };
+    config.sections.skills = await askBulletList('Habilidade (linha vazia termina)');
   }
 
   return config;
@@ -272,6 +264,41 @@ async function askEducationItems(): Promise<EducationItem[]> {
       type: 'toggle',
       name: 'value',
       message: 'Adicionar outra formação?',
+      initial: false,
+    });
+    addMore = !!more.value;
+  }
+
+  return items;
+}
+
+async function askLanguageItems(): Promise<LanguageItem[]> {
+  const items: LanguageItem[] = [];
+
+  let addMore = true;
+  while (addMore) {
+    const language = await prompts({
+      type: 'text',
+      name: 'value',
+      message: '  Língua (ex: Português)',
+      validate: (v: string) => (v?.trim() ? true : 'Língua é obrigatória'),
+    });
+    const level = await prompts({
+      type: 'text',
+      name: 'value',
+      message: '  Nível (ex: Materna, C1, Avançado)',
+      validate: (v: string) => (v?.trim() ? true : 'Nível é obrigatório'),
+    });
+
+    items.push({
+      language: String(language.value).trim(),
+      level: String(level.value).trim(),
+    });
+
+    const more = await prompts({
+      type: 'toggle',
+      name: 'value',
+      message: 'Adicionar outra língua?',
       initial: false,
     });
     addMore = !!more.value;

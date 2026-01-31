@@ -14,38 +14,32 @@
     "objective": {
       "text": "Atuar como Motorista de Ligeiros."
     },
-    "experience": {
-      "items": [
-        {
-          "from": "2019",
-          "to": "2024",
-          "country": "Brasil",
-          "role": "Motorista de Caminhão de Cargas",
-          "company": "Pretuz Fruit",
-          "bullets": [
-            "Montagem de Sacolas.",
-            "Produção por hora.",
-            "Metas semanais."
-          ]
-        }
-      ]
-    },
-    "education": {
-      "items": [
-        {
-          "title": "Ensino Secundário Completo (12º)",
-          "institution": "Escola Municipal de Ensino Maria da Conceição"
-        }
-      ]
-    },
-    "languages": {
-      "nativeLanguage": "Português"
-    },
-    "skills": {
-      "items": [
-        "Carta de Condução B",
-        "Experiência com transporte de distribuição"
-      ]
-    }
+    "experience": [
+      {
+        "from": "2019",
+        "to": "2024",
+        "country": "Brasil",
+        "role": "Motorista de Caminhão de Cargas",
+        "company": "Pretuz Fruit",
+        "bullets": [
+          "Montagem de Sacolas.",
+          "Produção por hora.",
+          "Metas semanais."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "title": "Ensino Secundário Completo (12º)",
+        "institution": "Escola Municipal de Ensino Maria da Conceição"
+      }
+    ],
+    "languages": [
+      { "language": "Português", "level": "Materna" }
+    ],
+    "skills": [
+      "Carta de Condução B",
+      "Experiência com transporte de distribuição"
+    ]
   }
 }

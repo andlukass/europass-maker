@@ -35,12 +35,10 @@ export function generateHtml(config: CvConfig, logoPath?: string): string {
   const effectiveLogoPath = logoPath || 'src/assets/europass.png';
   const logoDataUrl = imageToDataUrl(effectiveLogoPath);
 
-  const logoHtml = logoDataUrl
-    ? `<div class="flex items-center gap-2"><img src="${logoDataUrl}" alt="Europass" class="h-[35px]"></div>`
-    : `<div class="flex items-center gap-2"><div class="w-8 h-8 bg-[#003399] flex items-center justify-center rounded-[2px]"><span class="text-[#ffcc00] text-[16px] leading-none">★</span></div><span class="text-[20pt] font-medium text-[#5c2d91]">europass</span></div>`;
+  const logoHtml = `<div class="flex items-center gap-2"><img src="${logoDataUrl}" alt="Europass" class="h-[50px] mt-4"></div>`
 
   const photoHtml = photoDataUrl
-    ? `<img src="${photoDataUrl}" alt="" class="w-[110px] h-[135px] object-cover shrink-0">`
+    ? `<img src="${photoDataUrl}" alt="" class="w-[120px] h-[145px] object-cover shrink-0">`
     : '';
 
   const personalItems: Array<{ label: string; value: string }> = [];
@@ -50,22 +48,22 @@ export function generateHtml(config: CvConfig, logoPath?: string): string {
   if (config.personal.phone) personalItems.push({ label: 'Telemóvel', value: config.personal.phone });
   if (config.personal.address) personalItems.push({ label: 'Morada', value: config.personal.address });
 
-  const leftLabels = new Set(['Nacionalidade', 'Email', 'Morada']);
-  const leftCol = personalItems.filter((i) => leftLabels.has(i.label));
-  const rightCol = personalItems.filter((i) => !leftLabels.has(i.label));
-
   const personalGridHtml =
     personalItems.length > 0
       ? `
-  <div class="grid grid-cols-2 gap-y-3 gap-x-[60px] mt-1">
-    <div>${leftCol.map((i) => `<div class="text-[10pt] text-[#222]"><span class="font-bold inline-block w-[100px]">${escapeHtml(i.label)}:</span> <span class="text-black">${escapeHtml(i.value)}</span></div>`).join('')}</div>
-    <div>${rightCol.map((i) => `<div class="text-[10pt] text-[#222]"><span class="font-bold inline-block w-[100px]">${escapeHtml(i.label)}:</span> <span class="text-black">${escapeHtml(i.value)}</span></div>`).join('')}</div>
+  <div class="grid grid-cols-2 gap-y-2 gap-x-[60px] mt-1">
+    ${personalItems
+      .map((i) => {
+        const spanClass = i.value.length > 24 ? 'col-span-2' : '';
+        return `<div class="text-[10pt] text-[#222] ${spanClass}"><span class="font-bold inline-block w-[100px]">${escapeHtml(i.label)}:</span> <span class="text-black">${escapeHtml(i.value)}</span></div>`;
+      })
+      .join('')}
   </div>`
       : '';
 
   const headerHtml = `
 <div class="bg-[#f8f9f9] pt-[30px] pb-[20px] px-[40px] mb-[30px]">
-  <div class="flex gap-[25px] items-start">
+  <div class="flex gap-[25px] items-center">
     ${photoHtml}
     <div class="flex-1">
       <div class="flex justify-between items-center mb-2">
@@ -86,42 +84,46 @@ export function generateHtml(config: CvConfig, logoPath?: string): string {
   if (config.sections.objective?.text) {
     sections.push(section('Objetivo Profissional', `<p class="m-0">${nl2br(config.sections.objective.text)}</p>`));
   }
-  if (config.sections.experience?.items?.length) {
-    const items = config.sections.experience.items
+  if (config.sections.experience?.length) {
+    const items = config.sections.experience
       .map(
         (e) => `
     <div class="mb-4 last:mb-0">
       <div class="text-[9.5pt] text-[#666] mb-0.5">${[e.from, e.to].filter(Boolean).join(' - ')}${e.country ? ` - ${escapeHtml(e.country)}` : ''}</div>
-      <div class="font-bold uppercase text-black mb-1">${escapeHtml(e.role)}${e.company ? ` – <span class="underline text-[#4c4a8d]">${escapeHtml(e.company)}</span>` : ''}</div>
+      <div class="h-px bg-[#d2d4d8]"></div>
+      <div class="font-bold uppercase text-gray-900 mb-1">${escapeHtml(e.role)}${e.company ? ` – <span class="text-gray-900 font-normal">${escapeHtml(e.company)}</span>` : ''}</div>
       ${e.bullets?.length ? `<ul class="mt-1 list-disc pl-5">${e.bullets.map((b) => `<li class="mb-1 last:mb-0">${escapeHtml(b)}</li>`).join('')}</ul>` : ''}
     </div>`
       )
       .join('');
     sections.push(section('Experiência Profissional', items));
   }
-  if (config.sections.education?.items?.length) {
-    const items = config.sections.education.items
+  if (config.sections.education?.length) {
+    const items = config.sections.education
       .map(
         (e) => `
     <div class="mb-3 last:mb-0">
-      <div class="font-bold uppercase text-black mb-0.5">${escapeHtml(e.title)}</div>
+      <div class="font-bold uppercase text-gray-900 mb-0.5">${escapeHtml(e.title)}</div>
       ${e.institution ? `<div class="text-[10pt] text-[#333]">${escapeHtml(e.institution)}</div>` : ''}
     </div>`
       )
       .join('');
     sections.push(section('Educação e Formação', items));
   }
-  if (config.sections.languages?.nativeLanguage) {
-    sections.push(
-      section(
-        'Competências Linguísticas',
-        `<div>Língua Nativa: <span class="font-bold uppercase">${escapeHtml(config.sections.languages.nativeLanguage)}</span></div>`
+  if (config.sections.languages?.length) {
+    const items = config.sections.languages
+      .map(
+        (l) => `
+    <div class="mb-1 last:mb-0">
+      <span class="font-bold">${escapeHtml(l.language)}</span>: <span class="text-[#333]">${escapeHtml(l.level)}</span>
+    </div>`
       )
-    );
+      .join('');
+    sections.push(section('Competências Linguísticas', items));
   }
-  if (config.sections.skills?.items?.length) {
-    const list = config.sections.skills.items.map((s) => `<li class="mb-1 last:mb-0">${escapeHtml(s)}</li>`).join('');
-    sections.push(section('Habilidades', `<ul class="mt-1 list-disc pl-5">${list}</ul>`));
+  if (config.sections.skills?.length) {
+    const skillsStr = config.sections.skills.map((s) => escapeHtml(s)).join(' | ');
+    sections.push(section('Habilidades', `<div class="mt-1">${skillsStr}</div>`));
   }
 
   return `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${css}</style></head><body>${headerHtml}${sections.join('')}</body></html>`;
