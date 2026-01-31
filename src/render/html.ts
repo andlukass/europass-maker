@@ -1,6 +1,6 @@
+import { readFileSync } from 'node:fs';
 import type { CvConfig } from '../model.js';
 import { imageToDataUrl } from './assets.js';
-import { readFileSync } from 'fs';
 
 function escapeHtml(s: string): string {
   return s
@@ -66,11 +66,11 @@ export function generateHtml(config: CvConfig, logoPath?: string): string {
   <div class="flex gap-[25px] items-center">
     ${photoHtml}
     <div class="flex-1">
-      <div class="flex justify-between items-center mb-2">
-        <h1 class="text-[20pt] font-semibold text-[#444] m-0">${escapeHtml(config.personal.name)}</h1>
+      <div class="flex justify-between items-center">
+        <h1 class="text-[24px] font-semibold text-[#444] m-0">${escapeHtml(config.personal.name)}</h1>
         ${logoHtml}
       </div>
-      <div class="h-[2px] bg-[#aeb1b1] my-[10px] mb-[15px]"></div>
+      <div class="h-[2px] bg-[#aeb1b1] mb-[15px]"></div>
       ${personalGridHtml}
     </div>
   </div>
