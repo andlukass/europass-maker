@@ -21,8 +21,6 @@ export interface LanguageItem {
 }
 
 export interface CvConfig {
-  outputPdf?: string;
-  logoPath?: string;
   personal: {
     photoPath?: string;
     name: string;

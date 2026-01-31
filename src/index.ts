@@ -10,8 +10,7 @@ import { generatePdf } from './render/pdf.js';
 interface CliArgs {
   config?: string;
   out?: string;
-  saveConfig?: string;
-  logo?: string;
+  rasc?: boolean;
 }
 
 function parseArgs(): CliArgs {
@@ -23,10 +22,8 @@ function parseArgs(): CliArgs {
       args.config = argv[++i];
     } else if (arg === '--out' && argv[i + 1]) {
       args.out = argv[++i];
-    } else if (arg === '--save-config' && argv[i + 1]) {
-      args.saveConfig = argv[++i];
-    } else if (arg === '--logo' && argv[i + 1]) {
-      args.logo = argv[++i];
+    } else if (arg === '--rasc') {
+      args.rasc = true;
     }
   }
   return args;
@@ -50,7 +47,7 @@ function saveConfig(config: CvConfig, path: string): void {
 
 async function main(): Promise<void> {
   const args = parseArgs();
-  const saveConfigPath = args.saveConfig ?? './configs/cv-config.json';
+  const saveConfigPath = './configs/cv-config.json';
 
   let config: CvConfig;
 
@@ -61,9 +58,9 @@ async function main(): Promise<void> {
     saveConfig(config, saveConfigPath);
   }
 
-  const outPath = args.out ?? config.outputPdf ?? './cv-europass.pdf';
+  const outPath = args.out ?? './cv-europass.pdf';
 
-  const html = generateHtml(config, args.logo ?? config.logoPath);
+  const html = generateHtml(config, args.rasc);
   await generatePdf(html, resolve(process.cwd(), outPath));
   console.log(`PDF saved to ${outPath}`);
 }

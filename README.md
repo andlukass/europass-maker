@@ -67,14 +67,11 @@ node dist/index.js --config configs/cv-config.example.json --out meu-cv.pdf
 |-------|-----------|
 | `--config <path>` | Caminho para JSON (ativa modo JSON, sem perguntas) |
 | `--out <path>` | Caminho do PDF gerado (default: `./cv-europass.pdf`) |
-| `--save-config <path>` | Onde guardar o JSON no modo interativo (default: `./configs/cv-config.json`) |
-| `--logo <path>` | Caminho para imagem do logo Europass (se não indicado, usa mock) |
 
 ## Estrutura do JSON
 
 ```json
 {
-  "outputPdf": "cv.pdf",
   "personal": {
     "photoPath": "",
     "name": "Nome Completo",

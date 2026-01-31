@@ -26,14 +26,30 @@ function section(title: string, content: string): string {
 </div>`;
 }
 
-export function generateHtml(config: CvConfig, logoPath?: string): string {
+export function generateHtml(config: CvConfig, rasc?: boolean): string {
   const cssPath = new URL('./tailwind.css', import.meta.url);
   const css = readFileSync(cssPath, 'utf8');
 
   const photoDataUrl = config.personal.photoPath ? imageToDataUrl(config.personal.photoPath) : null;
   
-  const effectiveLogoPath = logoPath || 'src/assets/europass.png';
+  const effectiveLogoPath = 'src/assets/europass.png';
   const logoDataUrl = imageToDataUrl(effectiveLogoPath);
+
+  const rascHtml = rasc
+    ? `
+<div class="fixed top-0 right-[15%] h-full flex flex-col justify-center items-center pointer-events-none z-50">
+  <div class="text-[#666] opacity-30 font-bold text-[60px] flex flex-col items-center uppercase select-none space-y-2">
+    <span>R</span>
+    <span>A</span>
+    <span>S</span>
+    <span>C</span>
+    <span>U</span>
+    <span>N</span>
+    <span>H</span>
+    <span>O</span>
+  </div>
+</div>`
+    : '';
 
   const logoHtml = `<div class="flex items-center gap-2"><img src="${logoDataUrl}" alt="Europass" class="h-[50px] mt-4"></div>`
 
@@ -126,5 +142,5 @@ export function generateHtml(config: CvConfig, logoPath?: string): string {
     sections.push(section('Habilidades', `<div class="mt-1">${skillsStr}</div>`));
   }
 
-  return `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${css}</style></head><body>${headerHtml}${sections.join('')}</body></html>`;
+  return `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${css}</style></head><body>${rascHtml}${headerHtml}${sections.join('')}</body></html>`;
 }
