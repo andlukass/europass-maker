@@ -65,7 +65,7 @@ export function generateHtml(config: CvConfig, logoPath?: string): string {
 <div class="bg-[#f8f9f9] pt-[30px] pb-[20px] px-[40px] mb-[30px]">
   <div class="flex gap-[25px] items-center">
     ${photoHtml}
-    <div class="flex-1">
+    <div class="flex-1 -mt-4">
       <div class="flex justify-between items-center">
         <h1 class="text-[24px] font-semibold text-[#444] m-0">${escapeHtml(config.personal.name)}</h1>
         ${logoHtml}
