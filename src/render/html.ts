@@ -49,7 +49,7 @@ export function generateHtml(config: CvConfig, rasc?: boolean): string {
 </div>`
     : '';
 
-  const logoHtml = `<div class="flex items-center gap-2"><img src="${logoDataUrl}" alt="Europass" class="h-[50px] mt-4"></div>`
+  const logoHtml = `<div class="flex items-center gap-2"><img src="${logoDataUrl}" alt="Europass" class="h-[50px] mt-3"></div>`
 
   const photoHtml = photoDataUrl
     ? `<img src="${photoDataUrl}" alt="" class="w-[120px] h-[145px] object-cover shrink-0">`
