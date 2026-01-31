@@ -2,11 +2,11 @@
   "cvLanguage": "PT",
   "personal": {
     "photoPath": "1.jpg",
-    "name": "Jorge Luis Araújo de Albuquerque",
+    "name": "Matheus Costa Silva",
     "nationality": "Brasileiro",
     "sex": "Masculino",
-    "phone": "+351 916 689 035",
-    "address": "Gondomar - Porto"
+    "phone": "+351 999 999 999",
+    "address": "Amadora - Lisboa"
   },
   "sections": {
     "presentation": {
@@ -23,9 +23,9 @@
         "role": "Motorista de Caminhão de Cargas",
         "company": "Pretuz Fruit",
         "bullets": [
-          "Montagem de Sacolas.",
-          "Produção por hora.",
-          "Metas semanais."
+          "Condução de veículos de carga.",
+          "Viagens longas e intensas.",
+          "Manutenção de veículos."
         ]
       }
     ],
@@ -36,7 +36,7 @@
       }
     ],
     "languages": [
-      { "language": "Português", "level": "Materna" }
+      { "language": "Português", "level": "Nativo" }
     ],
     "skills": [
       "Carta de Condução B",
