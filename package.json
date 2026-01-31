@@ -1,0 +1,35 @@
+{
+  "name": "cv-creator",
+  "version": "1.0.0",
+  "description": "Europass CV PDF generator",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "css:dev": "tailwindcss -c tailwind.config.js -i src/render/tailwind-input.css -o src/render/tailwind.css --minify",
+    "css:dist": "tailwindcss -c tailwind.config.js -i src/render/tailwind-input.css -o dist/render/tailwind.css --minify",
+    "build": "tsc && npm run css:dist",
+    "start": "PLAYWRIGHT_BROWSERS_PATH=./.browsers node dist/index.js",
+    "cv": "npm run css:dev && PLAYWRIGHT_BROWSERS_PATH=./.browsers node --import tsx src/index.ts",
+    "dev": "node scripts/dev-watch.mjs",
+    "cv:build": "npm run build && npm start"
+  },
+  "keywords": [
+    "cv",
+    "europass",
+    "pdf"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.49.0",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "@types/node": "^22.10.0",
+    "chokidar": "^4.0.3",
+    "tailwindcss": "^4.1.18",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.0"
+  }
+}

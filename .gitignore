@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.pdf
+configs/cv-config.json
+src/render/tailwind.css
+
+.browsers/
