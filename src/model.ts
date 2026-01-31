@@ -1,6 +1,8 @@
 /**
  * CV configuration structure (matches JSON format)
  */
+export type CvLanguage = 'PT' | 'EN';
+
 export interface ExperienceItem {
   from?: string;
   to?: string;
@@ -21,6 +23,7 @@ export interface LanguageItem {
 }
 
 export interface CvConfig {
+  cvLanguage?: CvLanguage;
   personal: {
     photoPath?: string;
     name: string;

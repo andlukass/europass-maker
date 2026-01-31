@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import type { CvConfig } from '../model.js';
 import { imageToDataUrl } from './assets.js';
+import { getDictionary } from '../dictionary.js';
 
 function escapeHtml(s: string): string {
   return s
@@ -27,6 +28,7 @@ function section(title: string, content: string): string {
 }
 
 export function generateHtml(config: CvConfig, rasc?: boolean): string {
+  const dict = getDictionary(config.cvLanguage);
   const cssPath = new URL('./tailwind.css', import.meta.url);
   const css = readFileSync(cssPath, 'utf8');
 
@@ -39,14 +41,10 @@ export function generateHtml(config: CvConfig, rasc?: boolean): string {
     ? `
 <div class="fixed top-0 right-[15%] h-full flex flex-col justify-center items-center pointer-events-none z-50">
   <div class="text-[#666] opacity-30 font-bold text-[60px] flex flex-col items-center uppercase select-none space-y-2">
-    <span>R</span>
-    <span>A</span>
-    <span>S</span>
-    <span>C</span>
-    <span>U</span>
-    <span>N</span>
-    <span>H</span>
-    <span>O</span>
+    ${dict.draft
+      .split('')
+      .map((char) => `<span>${escapeHtml(char)}</span>`)
+      .join('')}
   </div>
 </div>`
     : '';
@@ -58,11 +56,11 @@ export function generateHtml(config: CvConfig, rasc?: boolean): string {
     : '';
 
   const personalItems: Array<{ label: string; value: string }> = [];
-  if (config.personal.nationality) personalItems.push({ label: 'Nacionalidade', value: config.personal.nationality });
-  if (config.personal.sex) personalItems.push({ label: 'Sexo', value: config.personal.sex });
-  if (config.personal.email) personalItems.push({ label: 'Email', value: config.personal.email });
-  if (config.personal.phone) personalItems.push({ label: 'Telemóvel', value: config.personal.phone });
-  if (config.personal.address) personalItems.push({ label: 'Morada', value: config.personal.address });
+  if (config.personal.nationality) personalItems.push({ label: dict.nationality, value: config.personal.nationality });
+  if (config.personal.sex) personalItems.push({ label: dict.sex, value: config.personal.sex });
+  if (config.personal.email) personalItems.push({ label: dict.email, value: config.personal.email });
+  if (config.personal.phone) personalItems.push({ label: dict.phone, value: config.personal.phone });
+  if (config.personal.address) personalItems.push({ label: dict.address, value: config.personal.address });
 
   const personalGridHtml =
     personalItems.length > 0
@@ -95,10 +93,10 @@ export function generateHtml(config: CvConfig, rasc?: boolean): string {
   const sections: string[] = [];
 
   if (config.sections.presentation?.text) {
-    sections.push(section('Apresentação', `<p class="m-0">${nl2br(config.sections.presentation.text)}</p>`));
+    sections.push(section(dict.presentation, `<p class="m-0">${nl2br(config.sections.presentation.text)}</p>`));
   }
   if (config.sections.objective?.text) {
-    sections.push(section('Objetivo Profissional', `<p class="m-0">${nl2br(config.sections.objective.text)}</p>`));
+    sections.push(section(dict.objective, `<p class="m-0">${nl2br(config.sections.objective.text)}</p>`));
   }
   if (config.sections.experience?.length) {
     const items = config.sections.experience
@@ -112,7 +110,7 @@ export function generateHtml(config: CvConfig, rasc?: boolean): string {
     </div>`
       )
       .join('');
-    sections.push(section('Experiência Profissional', items));
+    sections.push(section(dict.experience, items));
   }
   if (config.sections.education?.length) {
     const items = config.sections.education
@@ -124,7 +122,7 @@ export function generateHtml(config: CvConfig, rasc?: boolean): string {
     </div>`
       )
       .join('');
-    sections.push(section('Educação e Formação', items));
+    sections.push(section(dict.education, items));
   }
   if (config.sections.languages?.length) {
     const items = config.sections.languages
@@ -135,11 +133,11 @@ export function generateHtml(config: CvConfig, rasc?: boolean): string {
     </div>`
       )
       .join('');
-    sections.push(section('Competências Linguísticas', items));
+    sections.push(section(dict.languages, items));
   }
   if (config.sections.skills?.length) {
     const skillsStr = config.sections.skills.map((s) => escapeHtml(s)).join(' | ');
-    sections.push(section('Habilidades', `<div class="mt-1">${skillsStr}</div>`));
+    sections.push(section(dict.skills, `<div class="mt-1">${skillsStr}</div>`));
   }
 
   return `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${css}</style></head><body>${rascHtml}${headerHtml}${sections.join('')}</body></html>`;

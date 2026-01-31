@@ -67,6 +67,7 @@ node dist/index.js --config configs/cv-config.example.json --out meu-cv.pdf
 |-------|-----------|
 | `--config <path>` | Caminho para JSON (ativa modo JSON, sem perguntas) |
 | `--out <path>` | Caminho do PDF gerado (default: `./cv-europass.pdf`) |
+| `--rasc`        | Faz com que fique escrito rascunho à frente do curriculo |
 
 ## Estrutura do JSON
 

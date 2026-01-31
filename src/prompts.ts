@@ -1,11 +1,23 @@
 import prompts from 'prompts';
-import type { CvConfig, ExperienceItem, EducationItem, LanguageItem } from './model.js';
+import type { CvConfig, ExperienceItem, EducationItem, LanguageItem, CvLanguage } from './model.js';
 
 export async function runInteractivePrompts(): Promise<CvConfig> {
   const config: CvConfig = {
     personal: { name: '' },
     sections: {},
   };
+
+  const language = await prompts({
+    type: 'select',
+    name: 'value',
+    message: 'Selecione o idioma do CV',
+    choices: [
+      { title: 'Português', value: 'PT' },
+      { title: 'English', value: 'EN' },
+    ],
+    initial: 0,
+  });
+  config.cvLanguage = language.value as CvLanguage;
 
   // --- Personal data ---
   const photoPath = await prompts({
