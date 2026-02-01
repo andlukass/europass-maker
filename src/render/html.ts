@@ -27,12 +27,12 @@ function section(title: string, content: string): string {
 </div>`;
 }
 
-export function generateHtml(config: CvConfig, rasc?: boolean): string {
+export function generateHtml(config: CvConfig, photoPath?: string | null, rasc?: boolean): string {
   const dict = getDictionary(config.cvLanguage);
   const cssPath = new URL('./tailwind.css', import.meta.url);
   const css = readFileSync(cssPath, 'utf8');
 
-  const photoDataUrl = config.personal.photoPath ? imageToDataUrl(config.personal.photoPath) : null;
+  const photoDataUrl = photoPath ? imageToDataUrl(photoPath) : null;
   
   const effectiveLogoPath = 'src/assets/europass.png';
   const logoDataUrl = imageToDataUrl(effectiveLogoPath);

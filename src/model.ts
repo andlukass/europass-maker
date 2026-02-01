@@ -25,7 +25,6 @@ export interface LanguageItem {
 export interface CvConfig {
   cvLanguage?: CvLanguage;
   personal: {
-    photoPath?: string;
     name: string;
     nationality?: string;
     sex?: string;

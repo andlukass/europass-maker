@@ -20,17 +20,6 @@ export async function runInteractivePrompts(): Promise<CvConfig> {
   config.cvLanguage = language.value as CvLanguage;
 
   // --- Personal data ---
-  const photoPath = await prompts({
-    type: 'text',
-    name: 'value',
-    message: 'Caminho para foto (vazio = sem foto)',
-    initial: '',
-  });
-  {
-    const s = String(photoPath.value ?? '').trim();
-    if (s) config.personal.photoPath = s;
-  }
-
   const name = await prompts({
     type: 'text',
     name: 'value',

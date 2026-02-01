@@ -74,7 +74,6 @@ node dist/index.js --config configs/cv-config.example.json --out meu-cv.pdf
 ```json
 {
   "personal": {
-    "photoPath": "",
     "name": "Nome Completo",
     "nationality": "Português",
     "sex": "Masculino",
@@ -108,7 +107,6 @@ node dist/index.js --config configs/cv-config.example.json --out meu-cv.pdf
 ```
 
 - Campos em branco ou ausentes em `personal` são omitidos do PDF (exceto `name`, obrigatório).
-- `photoPath` vazio ou ausente = sem foto.
 - Cada secção em `sections` é opcional; só aparece no PDF se existir e tiver conteúdo.
 
 ## Logo Europass

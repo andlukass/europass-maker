@@ -5,13 +5,11 @@
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "css:dev": "tailwindcss -c tailwind.config.js -i src/render/tailwind-input.css -o src/render/tailwind.css --minify",
-    "css:dist": "tailwindcss -c tailwind.config.js -i src/render/tailwind-input.css -o dist/render/tailwind.css --minify",
-    "build": "tsc && npm run css:dist",
+    "build": "npm run css:build && tsc",
+    "css:build": "tailwindcss -i src/render/tailwind-input.css -o src/render/tailwind.css --minify",
+    "css:dev": "tailwindcss -i src/render/tailwind-input.css -o src/render/tailwind.css",
     "start": "PLAYWRIGHT_BROWSERS_PATH=./.browsers node dist/index.js",
-    "cv": "npm run css:dev && PLAYWRIGHT_BROWSERS_PATH=./.browsers node --import tsx src/index.ts",
-    "dev": "node scripts/dev-watch.mjs",
-    "cv:build": "npm run build && npm start"
+    "dev": "npm run css:dev && PLAYWRIGHT_BROWSERS_PATH=./.browsers tsx src/index.ts"
   },
   "keywords": [
     "cv",
@@ -21,12 +19,17 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "node-telegram-bot-api": "^0.67.0",
     "playwright": "^1.49.0",
     "prompts": "^2.4.2"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.18",
+    "@types/express": "^5.0.6",
     "@types/node": "^22.10.0",
+    "@types/node-telegram-bot-api": "^0.64.13",
     "chokidar": "^4.0.3",
     "tailwindcss": "^4.1.18",
     "tsx": "^4.19.2",
