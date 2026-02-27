@@ -21,6 +21,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "lucide": "^0.575.0",
     "playwright": "^1.49.0",
     "prompts": "^2.4.2"
   },

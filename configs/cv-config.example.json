@@ -1,46 +1,47 @@
 {
   "cvLanguage": "PT",
   "personal": {
-    "photoPath": "1.jpg",
-    "name": "Matheus Costa Silva",
-    "nationality": "Brasileiro",
-    "sex": "Masculino",
-    "phone": "+351 999 999 999",
-    "address": "Amadora - Lisboa"
+    "photoPath": "3.jpeg",
+    "name": "Cynthia Silva Pereira",
+    "email": "cynthia2907@gmail.com",
+    "phone": "967095650",
+    "address": "Bairro São João 14, 6290-350 Gouveia"
   },
   "sections": {
-    "presentation": {
-      "text": "Texto de apresentação pessoal e profissional."
-    },
-    "objective": {
-      "text": "Atuar como Motorista de Ligeiros."
-    },
     "experience": [
       {
-        "from": "2019",
-        "to": "2024",
-        "country": "Brasil",
-        "role": "Motorista de Caminhão de Cargas",
-        "company": "Pretuz Fruit",
+        "role": "Assistente em Clínica Veterinária",
         "bullets": [
-          "Condução de veículos de carga.",
-          "Viagens longas e intensas.",
-          "Manutenção de veículos."
+          "Experiência de 2 anos e 2 meses em clínica veterinária."
+        ]
+      },
+      {
+        "role": "Auxiliar de Limpeza",
+        "bullets": [
+          "Experiência de 3 anos na área de limpeza."
+        ]
+      },
+      {
+        "role": "Manicure / Profissional de Salão",
+        "bullets": [
+          "Aproximadamente 10 anos de experiência em salão de beleza e manicure."
+        ]
+      },
+      {
+        "role": "Camareira",
+        "company": "Hotéis Castro Brasil",
+        "bullets": [
+          "Experiência de 3 anos como camareira."
         ]
       }
     ],
     "education": [
       {
-        "title": "Ensino Secundário Completo (12º)",
-        "institution": "Escola Municipal de Ensino Maria da Conceição"
+        "title": "Ensino Secundário Concluído"
       }
     ],
-    "languages": [
-      { "language": "Português", "level": "Nativo" }
-    ],
     "skills": [
-      "Carta de Condução B",
-      "Experiência com transporte de distribuição"
+      "Competência digital: Gmail"
     ]
   }
 }

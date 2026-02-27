@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 import { readFileSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
-import type { CvConfig } from './model.js';
-import { validateConfig } from './model.js';
-import { runInteractivePrompts } from './prompts.js';
+import type { SupportedCvConfig } from './cv-formats/types.js';
+import { parseCvConfig, detectCvTemplate } from './cv-formats/detect.js';
+import { isEuropassCvConfig } from './cv-formats/europass/validate.js';
+import { runEuropassPrompts } from './cv-formats/europass/prompts.js';
 import { generateHtml } from './render/html.js';
 import { generatePdf } from './render/pdf.js';
 
@@ -29,17 +30,14 @@ function parseArgs(): CliArgs {
   return args;
 }
 
-function loadConfig(path: string): CvConfig {
+function loadConfig(path: string): SupportedCvConfig {
   const absPath = resolve(process.cwd(), path);
   const content = readFileSync(absPath, 'utf-8');
   const parsed = JSON.parse(content) as unknown;
-  if (!validateConfig(parsed)) {
-    throw new Error('Invalid config: "personal.name" is required and must be non-empty');
-  }
-  return parsed as CvConfig;
+  return parseCvConfig(parsed);
 }
 
-function saveConfig(config: CvConfig, path: string): void {
+function saveConfig(config: SupportedCvConfig, path: string): void {
   const absPath = resolve(process.cwd(), path);
   writeFileSync(absPath, JSON.stringify(config, null, 2), 'utf-8');
   console.log(`Config saved to ${absPath}`);
@@ -49,16 +47,22 @@ async function main(): Promise<void> {
   const args = parseArgs();
   const saveConfigPath = './configs/cv-config.json';
 
-  let config: CvConfig;
+  let config: SupportedCvConfig;
 
   if (args.config) {
     config = loadConfig(args.config);
   } else {
-    config = await runInteractivePrompts();
+    config = await runEuropassPrompts();
     saveConfig(config, saveConfigPath);
   }
 
-  const outPath = args.out ?? './cv-europass.pdf';
+  const template = detectCvTemplate(config);
+  const defaultOutPath = template === 'professional' ? './cv-professional.pdf' : './cv-europass.pdf';
+  const outPath = args.out ?? defaultOutPath;
+
+  if (args.rasc && !isEuropassCvConfig(config)) {
+    console.warn('--rasc is only supported for the Europass template and will be ignored.');
+  }
 
   const html = generateHtml(config, args.rasc);
   await generatePdf(html, resolve(process.cwd(), outPath));

@@ -1,0 +1,153 @@
+{
+  "cvLanguage": "EN",
+  "header": {
+    "name": "João Veríssimo",
+    "headline": "Senior Software Engineer · Tech Lead · Product Owner",
+    "location": "Lisbon, Portugal",
+    "photoPath": null,
+    "contacts": {
+      "phone": "(+351) 916077553",
+      "email": "joaoverissimo@hotmail.com",
+      "birthDate": "1989-08-29",
+      "linkedin": "joão-veríssimo-69046379"
+    }
+  },
+  "summary": {
+    "text": "Senior software engineer with over 10 years of experience building and leading software projects. Skilled in cloud migrations, integrations, and managing small teams to deliver reliable solutions. Strong background in Java, databases, and modern DevOps tools."
+  },
+  "sections": {
+    "technicalSkills": [
+      {
+        "category": "Programming Languages",
+        "items": [
+          "Java (10+ yrs)",
+          "Python",
+          "TypeScript",
+          "JavaScript",
+          "PL/SQL (13+ yrs)",
+          "Bash",
+          "PHP"
+        ]
+      },
+      {
+        "category": "Frameworks & Frontend",
+        "items": [
+          "Angular",
+          "Laravel",
+          "HTML",
+          "CSS",
+          "REST APIs",
+          "Microservices",
+          "SOA"
+        ]
+      },
+      {
+        "category": "Databases & Data Engineering",
+        "items": [
+          "PostgreSQL",
+          "Oracle (13+ yrs)",
+          "SAP HANA Cloud",
+          "MySQL",
+          "SQL",
+          "ETL",
+          "Data Migration",
+          "Kafka"
+        ]
+      },
+      {
+        "category": "Cloud Platforms",
+        "items": ["AWS (EC2, RDS, IAM, S3 - 5+ yrs)", "GCP"]
+      },
+      {
+        "category": "DevOps & Tooling",
+        "items": [
+          "Docker (7+ yrs)",
+          "Kubernetes (2+ yrs)",
+          "Jenkins",
+          "GitHub Actions",
+          "CI/CD",
+          "Git"
+        ]
+      },
+      {
+        "category": "Enterprise Systems",
+        "items": ["SAP Sales Cloud", "SAP HANA Cloud", "Salesforce"]
+      },
+      {
+        "category": "System Integration",
+        "items": [
+          "Message Brokers",
+          "Process Orchestration",
+          "Reverse Proxies",
+          "Third-party Integrations"
+        ]
+      },
+      {
+        "category": "Development Practices",
+        "items": [
+          "Agile/Scrum",
+          "Product Ownership",
+          "Release Management",
+          "Code Review",
+          "Integration Testing"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "Instituto Politecnico de Tomar",
+        "location": "Tomar, Portugal",
+        "degree": "Bachelor's Degree in Computer Engineering",
+        "period": { "start": "2009", "end": "2013" },
+        "bullets": [
+          "Specialized in software engineering and system architecture",
+          "Completed comprehensive coursework in programming, databases, and computer systems"
+        ]
+      },
+      {
+        "institution": "Instituto Politecnico de Tomar",
+        "location": "Tomar, Portugal",
+        "degree": "CET in Information Technologies and Programming",
+        "period": null,
+        "bullets": [
+          "Technical specialization in information systems programming",
+          "Hands-on training in software development and system administration"
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "company": "Carrot Incentives",
+        "location": "Lisbon, Portugal",
+        "role": "Senior Software Engineer / Product Owner",
+        "period": { "start": "2017-08", "end": null, "isCurrent": true },
+        "bullets": [
+          "Led a small team building internal software with a Java backend and Angular frontend (SOA)",
+          "Handled feature planning, release management, and day-to-day dev team coordination",
+          "Built and maintained integration components: REST APIs, file-based and Kafka pipelines, gateways, and proxies",
+          "Migrated the main product database from Oracle 12c to PostgreSQL (AWS RDS)",
+          "Set up CI/CD pipelines with Jenkins and GitHub Actions; handled Docker/Kubernetes deployments",
+          "Worked across AWS and GCP to manage environments from development to QA",
+          "Built data integrations with SAP Sales Cloud and Salesforce (Vodafone Germany)",
+          "Set up SAP HANA Cloud (CDL/SDI) and troubleshooting around Data Provisioning Agent",
+          "Working on a Kafka-based processing system to replace file-based batch jobs",
+          "Provided support (L1-L3) and worked closely with users and stakeholders to troubleshoot issues and improve system usability"
+        ]
+      },
+      {
+        "company": "SoftINSA - Vodafone Portugal",
+        "location": "Lisbon, Portugal",
+        "role": "Software Engineer",
+        "period": { "start": "2013-10", "end": "2017-09", "isCurrent": false },
+        "bullets": [
+          "Wrote PL/SQL for commission and incentive systems using data from legacy sources",
+          "Implemented business logic in SAP Sales Cloud",
+          "Managed release cycles, did code reviews, and deployed updates",
+          "Handled non-production environments and supported integration tests",
+          "Helped migrate from Callidus TrueComp to IBM ICM",
+          "Built and maintained a time tracking tool using Laravel"
+        ]
+      }
+    ]
+  }
+}

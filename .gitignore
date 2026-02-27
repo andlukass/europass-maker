@@ -5,3 +5,5 @@ configs/cv-config.json
 src/render/tailwind.css
 
 .browsers/
+
+.env
