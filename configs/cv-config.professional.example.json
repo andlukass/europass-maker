@@ -1,151 +1,151 @@
 {
   "cvLanguage": "EN",
   "header": {
-    "name": "João Veríssimo",
-    "headline": "Senior Software Engineer · Tech Lead · Product Owner",
+    "name": "Lucas Andrade",
+    "headline": "Full Stack Engineer",
     "location": "Lisbon, Portugal",
     "photoPath": null,
     "contacts": {
-      "phone": "(+351) 916077553",
-      "email": "joaoverissimo@hotmail.com",
-      "birthDate": "1989-08-29",
-      "linkedin": "joão-veríssimo-69046379"
+      "phone": "+351 920 286 831",
+      "email": "lopess.andrade@gmail.com",
+      "birthDate": null,
+      "linkedin": "andlukas"
     }
   },
   "summary": {
-    "text": "Senior software engineer with over 10 years of experience building and leading software projects. Skilled in cloud migrations, integrations, and managing small teams to deliver reliable solutions. Strong background in Java, databases, and modern DevOps tools."
+    "text": "Full Stack Engineer with experience in distributed backend systems and microservices-based architectures. Strong background in REST APIs, PostgreSQL schema design, Redis performance optimization, and independently deployed services communicating over HTTP. Solid foundation in object-oriented programming (C++), comfortable reading and navigating JVM-based codebases, and adapting to new stacks. Experienced in AI-driven engineering workflows to accelerate delivery, improve code quality, and optimize development throughput in production environments."
   },
   "sections": {
     "technicalSkills": [
       {
         "category": "Programming Languages",
         "items": [
-          "Java (10+ yrs)",
-          "Python",
           "TypeScript",
           "JavaScript",
-          "PL/SQL (13+ yrs)",
-          "Bash",
-          "PHP"
-        ]
-      },
-      {
-        "category": "Frameworks & Frontend",
-        "items": [
-          "Angular",
-          "Laravel",
-          "HTML",
-          "CSS",
-          "REST APIs",
-          "Microservices",
-          "SOA"
-        ]
-      },
-      {
-        "category": "Databases & Data Engineering",
-        "items": [
-          "PostgreSQL",
-          "Oracle (13+ yrs)",
-          "SAP HANA Cloud",
-          "MySQL",
           "SQL",
-          "ETL",
-          "Data Migration",
-          "Kafka"
+          "C++ (OOP)",
+          "Python (basic)",
+          "JVM ecosystem (familiarity)"
         ]
       },
       {
-        "category": "Cloud Platforms",
-        "items": ["AWS (EC2, RDS, IAM, S3 - 5+ yrs)", "GCP"]
-      },
-      {
-        "category": "DevOps & Tooling",
+        "category": "Backend & Architecture",
         "items": [
-          "Docker (7+ yrs)",
-          "Kubernetes (2+ yrs)",
-          "Jenkins",
-          "GitHub Actions",
-          "CI/CD",
-          "Git"
+          "Node.js",
+          "NestJS (dependency injection, modular architecture)",
+          "REST APIs",
+          "Microservices architecture",
+          "HTTP-based inter-service communication",
+          "Serverless (Firebase Functions)"
         ]
       },
       {
-        "category": "Enterprise Systems",
-        "items": ["SAP Sales Cloud", "SAP HANA Cloud", "Salesforce"]
-      },
-      {
-        "category": "System Integration",
+        "category": "Databases & Caching",
         "items": [
-          "Message Brokers",
-          "Process Orchestration",
-          "Reverse Proxies",
-          "Third-party Integrations"
+          "PostgreSQL (schema design & performance optimization)",
+          "Redis",
+          "Cloud Firestore"
         ]
       },
       {
-        "category": "Development Practices",
+        "category": "Frontend",
         "items": [
-          "Agile/Scrum",
-          "Product Ownership",
-          "Release Management",
-          "Code Review",
-          "Integration Testing"
+          "React",
+          "Next.js",
+          "Responsive UI",
+          "PWA (mobile-first)"
+        ]
+      },
+      {
+        "category": "Cloud & DevOps",
+        "items": [
+          "AWS",
+          "Docker",
+          "GitHub Actions (CI/CD)",
+          "Git",
+          "Firebase"
+        ]
+      },
+      {
+        "category": "AI Engineering",
+        "items": [
+          "AI-assisted development workflows",
+          "Agent-based code generation",
+          "Structured code review and refinement flows"
         ]
       }
     ],
     "education": [
       {
-        "institution": "Instituto Politecnico de Tomar",
-        "location": "Tomar, Portugal",
-        "degree": "Bachelor's Degree in Computer Engineering",
-        "period": { "start": "2009", "end": "2013" },
+        "institution": "42 Lisboa",
+        "location": "Lisbon, Portugal",
+        "degree": "Software Engineering Program",
+        "period": { "start": "2023-04", "end": "2025-11" },
         "bullets": [
-          "Specialized in software engineering and system architecture",
-          "Completed comprehensive coursework in programming, databases, and computer systems"
+          "C and C++ programming fundamentals",
+          "Object-oriented programming and systems-level problem solving",
+          "Peer-to-peer project-based learning"
         ]
       },
       {
-        "institution": "Instituto Politecnico de Tomar",
-        "location": "Tomar, Portugal",
-        "degree": "CET in Information Technologies and Programming",
-        "period": null,
+        "institution": "Management in IT",
+        "location": "São Paulo, Brazil",
+        "degree": "Technologist Degree",
+        "period": { "start": "2016-02", "end": "2018-06" },
         "bullets": [
-          "Technical specialization in information systems programming",
-          "Hands-on training in software development and system administration"
+          "General concepts in programming, databases, networking, and information systems"
         ]
       }
     ],
     "experience": [
       {
-        "company": "Carrot Incentives",
+        "company": "Fantasy.top",
         "location": "Lisbon, Portugal",
-        "role": "Senior Software Engineer / Product Owner",
-        "period": { "start": "2017-08", "end": null, "isCurrent": true },
+        "role": "Full Stack Engineer",
+        "period": { "start": "2025-04", "end": "2026-03", "isCurrent": false },
         "bullets": [
-          "Led a small team building internal software with a Java backend and Angular frontend (SOA)",
-          "Handled feature planning, release management, and day-to-day dev team coordination",
-          "Built and maintained integration components: REST APIs, file-based and Kafka pipelines, gateways, and proxies",
-          "Migrated the main product database from Oracle 12c to PostgreSQL (AWS RDS)",
-          "Set up CI/CD pipelines with Jenkins and GitHub Actions; handled Docker/Kubernetes deployments",
-          "Worked across AWS and GCP to manage environments from development to QA",
-          "Built data integrations with SAP Sales Cloud and Salesforce (Vodafone Germany)",
-          "Set up SAP HANA Cloud (CDL/SDI) and troubleshooting around Data Provisioning Agent",
-          "Working on a Kafka-based processing system to replace file-based batch jobs",
-          "Provided support (L1-L3) and worked closely with users and stakeholders to troubleshoot issues and improve system usability"
+          "Worked within a microservices-based backend architecture composed of independently deployed services communicating via HTTP",
+          "Developed backend-driven features including database modeling and API design, reaching 1K+ DAU at peak (10K+ daily users platform-wide)",
+          "Built performance dashboards to monitor feature usage and key product metrics",
+          "Designed and optimized PostgreSQL schemas and leveraged Redis to reduce database load under high traffic",
+          "Implemented reward distribution services and financial automation with strict SQL-based idempotency safeguards",
+          "Leveraged structured AI-assisted workflows and agent-based code generation to significantly increase productivity and accelerate feature delivery",
+          "Collaborated in production incident handling and cross-service debugging"
         ]
       },
       {
-        "company": "SoftINSA - Vodafone Portugal",
-        "location": "Lisbon, Portugal",
+        "company": "Pairwire",
+        "location": "Remote",
         "role": "Software Engineer",
-        "period": { "start": "2013-10", "end": "2017-09", "isCurrent": false },
+        "period": { "start": "2024-11", "end": "2025-03", "isCurrent": false },
         "bullets": [
-          "Wrote PL/SQL for commission and incentive systems using data from legacy sources",
-          "Implemented business logic in SAP Sales Cloud",
-          "Managed release cycles, did code reviews, and deployed updates",
-          "Handled non-production environments and supported integration tests",
-          "Helped migrate from Callidus TrueComp to IBM ICM",
-          "Built and maintained a time tracking tool using Laravel"
+          "Built responsive React/TypeScript interfaces from Figma (dashboards, landing pages, chat UI)",
+          "Implemented a backend file ingestion service with deterministic and AI-based processing of data",
+          "Collaborated directly with the founder and a teammate to define requirements and iterate quickly in a remote environment"
+
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "company": "Retail Operations SaaS (2NDLifeMobile)",
+        "location": "Portugal",
+        "role": "Product Builder & Full-Stack Engineer",
+        "period": { "start": "2024-03", "end": null, "isCurrent": true },
+        "bullets": [
+          "Designed and maintain a retail operations platform covering inventory, sales, commissions, dashboards, and multi-store workflows",
+          "500K+ inventory transactions processed in production with daily operational usage",
+          "Implemented CI/CD pipelines and automated cloud deployments"
+        ]
+      },
+      {
+        "company": "Mestre das Chaves SaaS (GrapeSoftwares)",
+        "location": "Portugal",
+        "role": "Co-Builder & Full-Stack Engineer",
+        "period": { "start": "2024-11", "end": null, "isCurrent": true },
+        "bullets": [
+          "Developed a production operational management SaaS with scheduling workflows and role-based access",
+          "Maintained continuous delivery and stakeholder-driven feature evolution"
         ]
       }
     ]

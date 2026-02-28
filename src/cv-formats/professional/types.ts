@@ -49,10 +49,19 @@ export interface ProfessionalExperienceItem {
   bullets?: string[];
 }
 
+export interface ProfessionalProjectItem {
+  company: string;
+  location?: string | null;
+  role: string;
+  period?: ProfessionalPeriod | null;
+  bullets?: string[];
+}
+
 export interface ProfessionalSections {
   technicalSkills?: ProfessionalSkillGroup[];
   education?: ProfessionalEducationItem[];
   experience?: ProfessionalExperienceItem[];
+  projects?: ProfessionalProjectItem[];
 }
 
 export interface ProfessionalCvConfig {
