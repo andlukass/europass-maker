@@ -7,3 +7,6 @@ src/render/tailwind.css
 .browsers/
 
 .env
+
+configs/cv-config.professional.example.json
+configs/cv-config.professional.web3.json

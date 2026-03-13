@@ -98,7 +98,7 @@
         "company": "Retail Operations SaaS (2NDLifeMobile)",
         "location": "Portugal",
         "role": "Product Builder & Full-Stack Engineer",
-        "period": { "start": "2024-11", "end": null, "isCurrent": true },
+        "period": { "start": "2024-03", "end": null, "isCurrent": true },
         "bullets": [
           "Production retail operations platform covering inventory, sales, commissions, dashboards, user roles, and multi-store workflows",
           "500K+ inventory transactions processed in production; used daily by store staff",
