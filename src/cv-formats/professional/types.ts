@@ -2,6 +2,7 @@ import type { CvLanguage } from '../common.js';
 
 export interface ProfessionalContactInfo {
   phone?: string | null;
+  whatsapp?: string | null;
   email?: string | null;
   birthDate?: string | null;
   linkedin?: string | null;

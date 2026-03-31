@@ -6,6 +6,7 @@ export interface EuropassDictionary {
   sex: string;
   email: string;
   phone: string;
+  whatsapp: string;
   address: string;
   presentation: string;
   objective: string;
@@ -21,6 +22,7 @@ const pt: EuropassDictionary = {
   sex: 'Sexo',
   email: 'Email',
   phone: 'Telemóvel',
+  whatsapp: 'WhatsApp',
   address: 'Morada',
   presentation: 'Apresentação',
   objective: 'Objetivo Profissional',
@@ -36,6 +38,7 @@ const en: EuropassDictionary = {
   sex: 'Gender',
   email: 'Email',
   phone: 'Phone',
+  whatsapp: 'WhatsApp',
   address: 'Address',
   presentation: 'Presentation',
   objective: 'Professional Objective',

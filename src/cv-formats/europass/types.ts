@@ -17,6 +17,7 @@ export interface EuropassEducationItem {
 export interface EuropassLanguageItem {
   language: string;
   level: string;
+  break?: boolean;
 }
 
 export interface EuropassCvConfig {
@@ -29,6 +30,7 @@ export interface EuropassCvConfig {
     sex?: string;
     email?: string;
     phone?: string;
+    whatsapp?: string;
     address?: string;
   };
   sections: {

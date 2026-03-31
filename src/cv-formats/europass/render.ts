@@ -45,7 +45,10 @@ export function generateEuropassHtml(config: EuropassCvConfig, rasc?: boolean): 
   const personalItems: Array<{ label: string; value: string }> = [];
   if (config.personal.nationality) personalItems.push({ label: dict.nationality, value: config.personal.nationality });
   if (config.personal.sex) personalItems.push({ label: dict.sex, value: config.personal.sex });
-  if (config.personal.phone) personalItems.push({ label: dict.phone, value: config.personal.phone });
+  const phone = config.personal.phone?.trim();
+  const whatsapp = config.personal.whatsapp?.trim();
+  if (phone) personalItems.push({ label: dict.phone, value: phone });
+  if (whatsapp) personalItems.push({ label: dict.whatsapp, value: whatsapp });
   if (config.personal.email) personalItems.push({ label: dict.email, value: config.personal.email });
   if (config.personal.address) personalItems.push({ label: dict.address, value: config.personal.address });
 
@@ -111,14 +114,35 @@ export function generateEuropassHtml(config: EuropassCvConfig, rasc?: boolean): 
     sections.push(section(dict.education, items));
   }
   if (config.sections.languages?.length) {
-    const items = config.sections.languages
-      .map(
-        (language) => `
+    const languageRows: string[] = [];
+    let inlineLanguages: string[] = [];
+
+    const flushInlineLanguages = () => {
+      if (!inlineLanguages.length) return;
+      languageRows.push(`
     <div class="mb-1 last:mb-0">
-      <span class="font-bold">${escapeHtml(language.language)}</span>: <span class="text-[#333]">${escapeHtml(language.level)}</span>
-    </div>`
-      )
-      .join('');
+      ${inlineLanguages.join(' | ')}
+    </div>`);
+      inlineLanguages = [];
+    };
+
+    for (const language of config.sections.languages) {
+      const languageHtml = `<span class="font-bold">${escapeHtml(language.language)}</span>: <span class="text-[#333]">${escapeHtml(language.level)}</span>`;
+
+      if (language.break === false) {
+        inlineLanguages.push(languageHtml);
+        continue;
+      }
+
+      flushInlineLanguages();
+      languageRows.push(`
+    <div class="mb-1 last:mb-0">
+      ${languageHtml}
+    </div>`);
+    }
+
+    flushInlineLanguages();
+    const items = languageRows.join('');
     sections.push(section(dict.languages, items));
   }
   if (config.sections.skills?.length) {

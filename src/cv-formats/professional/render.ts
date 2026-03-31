@@ -59,9 +59,12 @@ export function generateProfessionalHtml(config: ProfessionalCvConfig): string {
   const css = readFileSync(cssPath, 'utf8');
   const photoDataUrl = config.header.photoPath ? imageToDataUrl(config.header.photoPath) : null;
   const contacts: string[] = [];
-  if (config.header.contacts?.phone) {
+  const phone = config.header.contacts?.phone?.trim();
+  const whatsapp = config.header.contacts?.whatsapp?.trim();
+  if (phone || whatsapp) {
+    const phoneLabel = phone && whatsapp ? `${phone} | WhatsApp: ${whatsapp}` : phone || `WhatsApp: ${whatsapp}`;
     contacts.push(
-      `<span class="inline-flex items-center gap-[4px]">${iconToSvg(Phone, 'w-[11px] h-[11px] text-[#2f3339] shrink-0')}<span>${escapeHtml(config.header.contacts.phone)}</span></span>`
+      `<span class="inline-flex items-center gap-[4px]">${iconToSvg(Phone, 'w-[11px] h-[11px] text-[#2f3339] shrink-0')}<span>${escapeHtml(phoneLabel)}</span></span>`
     );
   }
   if (config.header.contacts?.email) {
