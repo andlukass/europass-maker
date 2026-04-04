@@ -3,6 +3,7 @@
 Gera PDF de curriculo a partir de JSON com **dois formatos suportados**:
 
 - **Europass** (formato antigo)
+- **Europass 2** (layout lateral com timeline)
 - **Professional** (novo layout escuro, inspirado no PDF anexado)
 
 ## Instalacao
@@ -59,8 +60,10 @@ npm run dev -- configs/cv-config.example.json
 
 ## Como o formato e detectado
 
-- Se o JSON tiver `personal.name`, usa **Europass**.
-- Se o JSON tiver `header.name` e `summary.text`, usa **Professional**.
+- Se `cvKind` nao existir, o sistema assume **Europass**.
+- `cvKind: "europass"` usa template **Europass**.
+- `cvKind: "europass-2"` usa template **Europass 2**.
+- `cvKind: "professional"` usa template **Professional**.
 
 ## Organizacao das pastas
 
@@ -75,11 +78,9 @@ src/
       prompts.ts
       render.ts
       types.ts
-      validate.ts
     professional/
       render.ts
       types.ts
-      validate.ts
   render/
     assets.ts
     html.ts
@@ -90,4 +91,5 @@ src/
 ## Exemplos de config
 
 - Europass: `configs/cv-config.example.json`
+- Europass 2: `configs/cv-config.europass-2.example.json`
 - Professional: `configs/cv-config.professional.example.json`

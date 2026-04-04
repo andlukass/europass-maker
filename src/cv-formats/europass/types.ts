@@ -12,6 +12,7 @@ export interface EuropassExperienceItem {
 export interface EuropassEducationItem {
   title: string;
   institution?: string;
+  date?: string;
 }
 
 export interface EuropassLanguageItem {
@@ -21,7 +22,8 @@ export interface EuropassLanguageItem {
 }
 
 export interface EuropassCvConfig {
-  template?: 'europass';
+  cvKind: 'europass' | 'europass-2';
+  template?: 'europass' | 'europass-2';
   cvLanguage?: CvLanguage;
   personal: {
     photoPath?: string;

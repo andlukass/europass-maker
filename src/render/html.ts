@@ -1,16 +1,19 @@
 import type { SupportedCvConfig } from '../cv-formats/types.js';
-import { isEuropassCvConfig } from '../cv-formats/europass/validate.js';
-import { isProfessionalCvConfig } from '../cv-formats/professional/validate.js';
+import { detectCvTemplate } from '../cv-formats/detect.js';
+import type { EuropassCvConfig } from '../cv-formats/europass/types.js';
+import type { ProfessionalCvConfig } from '../cv-formats/professional/types.js';
 import { generateEuropassHtml } from '../cv-formats/europass/render.js';
 import { generateProfessionalHtml } from '../cv-formats/professional/render.js';
 
 export function generateHtml(config: SupportedCvConfig, rasc?: boolean): string {
-  if (isEuropassCvConfig(config)) {
-    return generateEuropassHtml(config, rasc);
+  const template = detectCvTemplate(config);
+
+  if (template === 'europass') {
+    return generateEuropassHtml(config as EuropassCvConfig, rasc);
   }
 
-  if (isProfessionalCvConfig(config)) {
-    return generateProfessionalHtml(config);
+  if (template === 'professional') {
+    return generateProfessionalHtml(config as ProfessionalCvConfig);
   }
 
   throw new Error('Unsupported CV config format');

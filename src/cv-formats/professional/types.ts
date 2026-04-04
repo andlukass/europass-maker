@@ -66,6 +66,7 @@ export interface ProfessionalSections {
 }
 
 export interface ProfessionalCvConfig {
+  cvKind: 'professional';
   template?: 'professional';
   cvLanguage?: CvLanguage;
   header: ProfessionalHeader;

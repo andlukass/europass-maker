@@ -9,6 +9,7 @@ import type { CvLanguage } from '../common.js';
 
 export async function runEuropassPrompts(): Promise<EuropassCvConfig> {
   const config: EuropassCvConfig = {
+    cvKind: 'europass',
     personal: { name: '' },
     sections: {},
   };

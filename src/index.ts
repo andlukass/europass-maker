@@ -3,7 +3,6 @@ import { readFileSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 import type { SupportedCvConfig } from './cv-formats/types.js';
 import { parseCvConfig, detectCvTemplate } from './cv-formats/detect.js';
-import { isEuropassCvConfig } from './cv-formats/europass/validate.js';
 import { runEuropassPrompts } from './cv-formats/europass/prompts.js';
 import { generateHtml } from './render/html.js';
 import { generatePdf } from './render/pdf.js';
@@ -60,12 +59,12 @@ async function main(): Promise<void> {
   const defaultOutPath = template === 'professional' ? './cv-professional.pdf' : './cv-europass.pdf';
   const outPath = args.out ?? defaultOutPath;
 
-  if (args.rasc && !isEuropassCvConfig(config)) {
+  if (args.rasc && template !== 'europass') {
     console.warn('--rasc is only supported for the Europass template and will be ignored.');
   }
 
   const html = generateHtml(config, args.rasc);
-  await generatePdf(html, resolve(process.cwd(), outPath));
+  await generatePdf(html, resolve(process.cwd(), outPath), { zeroMargin: config.cvKind === 'europass-2' });
   console.log(`PDF saved to ${outPath}`);
 }
 

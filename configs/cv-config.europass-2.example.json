@@ -1,0 +1,70 @@
+{
+  "cvKind": "europass-2",
+  "cvLanguage": "EN",
+  "personal": {
+    "photoPath": "5.png",
+    "name": "Brandy Rivers",
+    "nationality": "American",
+    "phone": "+1 212 000 0000",
+    "email": "brandy.rivers@mail.com",
+    "address": "NY, USA"
+  },
+  "sections": {
+    "presentation": {
+      "text": "Web designer with 5 years of experience. Passionate and enthusiastic about my career, a quality demonstrated in the more than 80 web pages made for clients of the most diverse sectors. I strive to deliver highest quality of work under any circumstances."
+    },
+    "education": [
+      {
+        "title": "2021 - PRESENT",
+        "institution": "Graphic Design - NYU"
+      },
+      {
+        "title": "2018 - 2020",
+        "institution": "Multimedia - NYU"
+      }
+    ],
+    "experience": [
+      {
+        "from": "01/01/2022",
+        "to": "PRESENT",
+        "country": "NY, USA",
+        "role": "Web Designer",
+        "company": "Prototype Agency",
+        "bullets": [
+          "Creating and designing website content.",
+          "Communication and corporate design.",
+          "Product photography."
+        ]
+      },
+      {
+        "from": "15/06/2019",
+        "to": "31/12/2021",
+        "country": "NY, USA",
+        "role": "Web Designer",
+        "company": "DigitalDay",
+        "bullets": [
+          "Design and development of content for mass mailings.",
+          "Design and content for web pages.",
+          "Internal design (logos, advertising, banners, flyers)."
+        ]
+      }
+    ],
+    "languages": [
+      {
+        "language": "English",
+        "level": "C2"
+      },
+      {
+        "language": "Spanish",
+        "level": "C2"
+      }
+    ],
+    "skills": [
+      "Microsoft Office",
+      "WordPress",
+      "Photoshop",
+      "Google Docs",
+      "Outlook"
+    ]
+  }
+}
