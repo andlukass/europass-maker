@@ -32,7 +32,7 @@ function formatDateToken(value: string): string {
 
 function buildSection(title: string, content: string): string {
   return `
-<section class="mt-[14px] break-inside-avoid [page-break-inside:avoid]">
+<section class="mt-[10px] break-inside-avoid [page-break-inside:avoid]">
   <h2 class="m-0 text-[18px] leading-none tracking-[-0.5px] font-extrabold text-[#1ea954]">${escapeHtml(title)}</h2>
   <div class="h-px bg-[#454545] mt-[4px] mb-[8px]"></div>
   <div>${content}</div>
@@ -213,8 +213,8 @@ export function generateProfessionalHtml(config: ProfessionalCvConfig): string {
   </style>
 </head>
 <body class="bg-white text-[#23262d] text-[10pt] leading-[1.35]">
-  <main class="px-[28px] pt-0 pb-[36px] bg-white">
-    <header class="flex items-start justify-between gap-[20px] mb-[18px]">
+  <main class="px-[28px] pt-0 bg-white">
+    <header class="flex items-start justify-between gap-[20px] mb-[10px]">
       <div class="flex-1 min-w-0">
         <h1 class="m-0 text-[#2c2f35] text-[31px] leading-[0.95] font-extrabold tracking-[-1px]">${escapeHtml(config.header.name)}</h1>
         ${
