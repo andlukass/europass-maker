@@ -28,6 +28,7 @@ export interface EuropassCvConfig {
   personal: {
     photoPath?: string;
     name: string;
+    birthDate?: string;
     nationality?: string;
     sex?: string;
     email?: string;

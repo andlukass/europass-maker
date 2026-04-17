@@ -2,6 +2,7 @@ import type { CvLanguage } from '../common.js';
 
 export interface EuropassDictionary {
   draft: string;
+  birthDate: string;
   nationality: string;
   sex: string;
   email: string;
@@ -18,6 +19,7 @@ export interface EuropassDictionary {
 
 const pt: EuropassDictionary = {
   draft: 'RASCUNHO',
+  birthDate: 'Nascimento',
   nationality: 'Nacionalidade',
   sex: 'Sexo',
   email: 'Email',
@@ -34,6 +36,7 @@ const pt: EuropassDictionary = {
 
 const en: EuropassDictionary = {
   draft: 'DRAFT',
+  birthDate: 'Date of birth',
   nationality: 'Nationality',
   sex: 'Gender',
   email: 'Email',

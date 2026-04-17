@@ -65,6 +65,7 @@ function generateEuropassClassicHtml(config: EuropassCvConfig, rasc?: boolean): 
   const phone = config.personal.phone?.trim();
   const whatsapp = config.personal.whatsapp?.trim();
   if (phone) personalItems.push({ label: dict.phone, value: phone });
+  if (config.personal.birthDate) personalItems.push({ label: dict.birthDate, value: config.personal.birthDate });
   if (whatsapp) personalItems.push({ label: dict.whatsapp, value: whatsapp });
   if (config.personal.email) personalItems.push({ label: dict.email, value: config.personal.email });
   if (config.personal.address) personalItems.push({ label: dict.address, value: config.personal.address });

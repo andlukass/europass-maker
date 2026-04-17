@@ -2,47 +2,56 @@
   "cvKind": "europass",
   "cvLanguage": "PT",
   "personal": {
-    "photoPath": "3.jpeg",
-    "name": "Cynthia Silva Pereira",
-    "email": "cynthia2907@gmail.com",
-    "phone": "967095650",
-    "address": "Bairro São João 14, 6290-350 Gouveia"
+    "name": "Jozenias Gomes Sampaio",
+    "email": "jozenias.sampaio12@gmail.com",
+    "phone": "938586899 / 939169926",
+    "address": "Rua dos Alcaides de Faria 427, Freguesia Faria",
+    "birthDate": "12/08/1990",
+    "photoPath": "2.jpeg"
   },
   "sections": {
+    "objective": {
+      "text": "Atuar em funções operacionais, especialmente na área de padaria, pastelaria ou atendimento ao público, contribuindo com dedicação e experiência."
+    },
     "experience": [
       {
-        "role": "Assistente em Clínica Veterinária",
+        "from": "10-2022",
+        "to": "01-2026",
+        "role": "Ajudante de Pasteleiro / Padaria / Forneiro",
+        "company": "Padaria Joaquim Miranda de Sá",
         "bullets": [
-          "Experiência de 2 anos e 2 meses em clínica veterinária."
+          "Apoio na produção de produtos de padaria e pastelaria.",
+          "Trabalho com fornos e preparação de massas.",
+          "Organização e apoio geral na padaria."
         ]
       },
       {
-        "role": "Auxiliar de Limpeza",
+        "from": "07-2024",
+        "to": "10-2025",
+        "role": "Gerente de Café",
+      "company": "Café São Salvador",
         "bullets": [
-          "Experiência de 3 anos na área de limpeza."
-        ]
-      },
-      {
-        "role": "Manicure / Profissional de Salão",
-        "bullets": [
-          "Aproximadamente 10 anos de experiência em salão de beleza e manicure."
-        ]
-      },
-      {
-        "role": "Camareira",
-        "company": "Hotéis Castro Brasil",
-        "bullets": [
-          "Experiência de 3 anos como camareira."
+          "Experiência de 1 ano na gestão de café.",
+          "Responsável pelo atendimento ao público e organização do espaço."
         ]
       }
     ],
     "education": [
       {
-        "title": "Ensino Secundário Concluído"
+        "title": "Ensino Médio Completo (12º)"
+      },
+      {
+        "title": "Curso de Informática"
       }
     ],
     "skills": [
-      "Competência digital: Gmail"
+      "Atendimento ao público",
+      "Trabalho em padaria e pastelaria",
+      "Organização",
+      "Responsabilidade",
+      "Carta de condução",
+      "Documentação em dia",
+      "Viatura própria"
     ]
   }
 }

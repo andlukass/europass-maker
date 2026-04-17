@@ -45,6 +45,17 @@ export async function runEuropassPrompts(): Promise<EuropassCvConfig> {
   });
   config.personal.name = String(name.value).trim();
 
+  const birthDate = await prompts({
+    type: 'text',
+    name: 'value',
+    message: 'Data de nascimento (vazio = omitir)',
+    initial: '',
+  });
+  {
+    const value = String(birthDate.value ?? '').trim();
+    if (value) config.personal.birthDate = value;
+  }
+
   const nationality = await prompts({
     type: 'text',
     name: 'value',
