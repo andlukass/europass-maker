@@ -1,57 +1,156 @@
 {
-  "cvKind": "europass",
+  "cvKind": "2",
   "cvLanguage": "PT",
   "personal": {
-    "name": "Jozenias Gomes Sampaio",
-    "email": "jozenias.sampaio12@gmail.com",
-    "phone": "938586899 / 939169926",
-    "address": "Rua dos Alcaides de Faria 427, Freguesia Faria",
-    "birthDate": "12/08/1990",
-    "photoPath": "2.jpeg"
+    "name": "Vânia Costa Apolinário",
+    "photoPath": "image.png",
+    "phone": "(+351) 939 179 682",
+    "email": "vaniacostaapolinario@gmail.com",
+    "address": "Rua Alberto Costa Pereira, 16, 3.º Dto., Costa da Caparica, Almada"
   },
   "sections": {
+    "presentation": {
+      "text": "Profissional com mais de 25 anos de experiência nas áreas fiscal, financeira e administrativa, adquirida em empresas de pequeno porte. Possui sólidos conhecimentos em apuração de tributos, entrada e saída de notas fiscais, contas a pagar e a receber, conciliação bancária, faturação, cobrança, controlo de estoque e análise de relatórios."
+    },
     "objective": {
-      "text": "Atuar em funções operacionais, especialmente na área de padaria, pastelaria ou atendimento ao público, contribuindo com dedicação e experiência."
+      "text": "Atuar como Assistente Administrativa."
     },
     "experience": [
       {
-        "from": "10-2022",
-        "to": "01-2026",
-        "role": "Ajudante de Pasteleiro / Padaria / Forneiro",
-        "company": "Padaria Joaquim Miranda de Sá",
+        "from": "2025-04",
+        "to": "2026-06",
+        "role": "Assistente Administrativo II",
+        "company": "Acrescenta Distribuidora de Alimentos Ltda.",
         "bullets": [
-          "Apoio na produção de produtos de padaria e pastelaria.",
-          "Trabalho com fornos e preparação de massas.",
-          "Organização e apoio geral na padaria."
+          "Efetuou a entrada e saída de notas fiscais no sistema e elaborou relatórios.",
+          "Realizou lançamentos de contas a pagar e contas a receber.",
+          "Manteve o cadastro de fornecedores, produtos e clientes.",
+          "Controlou canhotos para acompanhamento de entregas e cobranças.",
+          "Emitiu e controlou boletos bancários.",
+          "Realizou cobranças de títulos em atraso.",
+          "Corrigiu falhas em notas fiscais junto à Receita Federal.",
+          "Prestou atendimento ao cliente e manteve interface com a contabilidade.",
+          "Apoiou processos de recursos humanos e controlo de estoque."
         ]
       },
       {
-        "from": "07-2024",
-        "to": "10-2025",
-        "role": "Gerente de Café",
-      "company": "Café São Salvador",
+        "from": "2017-11",
+        "to": "2021-02",
+        "role": "Assistente Fiscal / Assistente Administrativo",
+        "company": "AG3 Comércio e Transporte de Alimentos",
         "bullets": [
-          "Experiência de 1 ano na gestão de café.",
-          "Responsável pelo atendimento ao público e organização do espaço."
+          "Apuração de tributos PIS, COFINS, ICMS e ICMS-ST.",
+          "Entrada e saída de notas fiscais e elaboração de relatórios.",
+          "Análise e envio de arquivos SPED.",
+          "Cadastro de fornecedores, clientes e produtos.",
+          "Controlo de estoque e atendimento ao cliente.",
+          "Interface com a contabilidade."
+        ]
+      },
+      {
+        "from": "2014-03",
+        "to": "2017-10",
+        "role": "Assistente Fiscal",
+        "company": "Uny Facas",
+        "bullets": [
+          "Emissão de boletos bancários.",
+          "Controlo e desconto de títulos.",
+          "Entrada e saída de notas fiscais.",
+          "Atendimento ao cliente."
+        ]
+      },
+      {
+        "from": "2008-09",
+        "to": "2014-02",
+        "role": "Assistente Administrativo",
+        "company": "Marka Comércio, Distribuição e Logística",
+        "bullets": [
+          "Implantação dos sistemas Mastermaq e Linkcom.",
+          "Implantação da nota fiscal eletrónica.",
+          "Faturação e emissão de notas fiscais.",
+          "Cadastro de produtos, clientes e fornecedores.",
+          "Compra e controlo de suprimentos.",
+          "Apuração de comissões de vendas."
+        ]
+      },
+      {
+        "from": "2004",
+        "to": "2008-08",
+        "role": "Auxiliar Administrativo",
+        "company": "BH Facas Ltda.",
+        "bullets": [
+          "Emissão de boletos bancários.",
+          "Controlo de títulos.",
+          "Entrada e saída de notas fiscais.",
+          "Atendimento ao cliente."
+        ]
+      },
+      {
+        "from": "1996",
+        "to": "2004",
+        "role": "Auxiliar Administrativo e Financeiro",
+        "company": "Painel Decorações Ltda.",
+        "bullets": [
+          "Contas a pagar e contas a receber.",
+          "Conciliação bancária e inclusão de títulos.",
+          "Análise de relatórios financeiros.",
+          "Controlo de benefícios e pagamentos.",
+          "Cobrança de clientes.",
+          "Apuração de comissões."
         ]
       }
     ],
     "education": [
       {
-        "title": "Ensino Médio Completo (12º)"
+        "title": "Ensino Médio Completo"
       },
       {
-        "title": "Curso de Informática"
+        "title": "Escrituração Fiscal e Impacto no SPED",
+        "institution": "SinesContábil MG",
+        "date": "2012"
+      },
+      {
+        "title": "Nota Fiscal Eletrónica",
+        "institution": "SinesContábil MG",
+        "date": "2010"
+      },
+      {
+        "title": "Introdução ao SPED",
+        "institution": "Mastermaq",
+        "date": "2010"
+      },
+      {
+        "title": "Crédito, Cadastro e Cobrança",
+        "institution": "CDL",
+        "date": "2008"
+      },
+      {
+        "title": "Pacote Office"
+      },
+      {
+        "title": "Sistema Mastermaq"
+      },
+      {
+        "title": "Sistemas Linkcom, Bling e GestãoClick"
       }
     ],
     "skills": [
-      "Atendimento ao público",
-      "Trabalho em padaria e pastelaria",
-      "Organização",
-      "Responsabilidade",
-      "Carta de condução",
-      "Documentação em dia",
-      "Viatura própria"
+      "Apuração de PIS, COFINS, ICMS e ICMS-ST",
+      "Escrituração fiscal",
+      "SPED e SINTEGRA",
+      "Emissão de notas fiscais eletrónicas",
+      "Contas a pagar e a receber",
+      "Conciliação bancária",
+      "Cobrança e emissão de boletos",
+      "Cadastro de clientes, fornecedores e produtos",
+      "Controlo de estoque",
+      "Atendimento ao cliente",
+      "Microsoft Office",
+      "Mastermaq",
+      "Linkcom",
+      "Bling",
+      "GestãoClick",
+      "Rotinas de recursos humanos"
     ]
   }
 }

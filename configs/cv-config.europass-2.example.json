@@ -1,70 +1,276 @@
 {
   "cvKind": "europass-2",
-  "cvLanguage": "EN",
-  "personal": {
-    "photoPath": "5.png",
-    "name": "Brandy Rivers",
-    "nationality": "American",
-    "phone": "+1 212 000 0000",
-    "email": "brandy.rivers@mail.com",
-    "address": "NY, USA"
-  },
-  "sections": {
-    "presentation": {
-      "text": "Web designer with 5 years of experience. Passionate and enthusiastic about my career, a quality demonstrated in the more than 80 web pages made for clients of the most diverse sectors. I strive to deliver highest quality of work under any circumstances."
+    "cvLanguage": "PT",
+    "personal": {
+      "name": "Vânia Costa Apolinário",
+      "photoPath": "image.png",
+      "phone": "(+351) 939 179 682",
+      "email": "vaniacostaapolinario@gmail.com",
+      "birthDate": null,
+      "address": "Rua Alberto Costa Pereira, 16, 3.º Dto., Costa da Caparica, Almada"
     },
-    "education": [
-      {
-        "title": "2021 - PRESENT",
-        "institution": "Graphic Design - NYU"
+    "sections": {
+      "objective": {
+        "text": "Assistente Administrativa"
       },
-      {
-        "title": "2018 - 2020",
-        "institution": "Multimedia - NYU"
-      }
-    ],
-    "experience": [
-      {
-        "from": "01/01/2022",
-        "to": "PRESENT",
-        "country": "NY, USA",
-        "role": "Web Designer",
-        "company": "Prototype Agency",
-        "bullets": [
-          "Creating and designing website content.",
-          "Communication and corporate design.",
-          "Product photography."
-        ]
+      "presentation": {
+      "text": "Profissional com mais de 25 anos de experiência nas áreas fiscal, financeira e administrativa, adquirida em empresas de pequeno porte. Possui sólidos conhecimentos em apuração de tributos, entrada e saída de notas fiscais, contas a pagar e contas a receber. Experiência em baixa e inclusão de títulos no sistema, conciliação bancária, faturação, cobrança, controlo de estoque e extração e análise de relatórios."
       },
-      {
-        "from": "15/06/2019",
-        "to": "31/12/2021",
-        "country": "NY, USA",
-        "role": "Web Designer",
-        "company": "DigitalDay",
-        "bullets": [
-          "Design and development of content for mass mailings.",
-          "Design and content for web pages.",
-          "Internal design (logos, advertising, banners, flyers)."
-        ]
-      }
-    ],
-    "languages": [
-      {
-        "language": "English",
-        "level": "C2"
-      },
-      {
-        "language": "Spanish",
-        "level": "C2"
-      }
-    ],
-    "skills": [
-      "Microsoft Office",
-      "WordPress",
-      "Photoshop",
-      "Google Docs",
-      "Outlook"
-    ]
+      "skills": [
+        "Área Fiscal",
+        "Área Financeira",
+        "Rotinas Administrativas",
+        "Recursos Humanos",
+        "Microsoft Office",
+        "Mastermaq",
+        "Linkcom",
+        "Bling",
+        "GestãoClick"
+      ],
+      "technicalSkills": [
+        {
+          "category": "Área Fiscal",
+          "items": [
+            "Apuração de PIS, COFINS, ICMS e ICMS-ST",
+            "Entrada, saída, cancelamento e devolução de notas fiscais",
+            "Escrituração fiscal",
+            "Análise e envio de SPED",
+            "Análise e envio de SINTEGRA",
+            "Conferência de CFOP",
+            "Emissão de notas fiscais eletrónicas"
+          ]
+        },
+        {
+          "category": "Área Financeira",
+          "items": [
+            "Contas a pagar",
+            "Contas a receber",
+            "Conciliação bancária",
+            "Inclusão e baixa de títulos",
+            "Emissão de boletos bancários",
+            "Cobrança de títulos em atraso",
+            "Controlo e desconto de títulos",
+            "Apuração de comissões"
+          ]
+        },
+        {
+          "category": "Rotinas Administrativas",
+          "items": [
+            "Cadastro de clientes, fornecedores e produtos",
+            "Elaboração e análise de relatórios",
+            "Controlo de estoque",
+            "Atendimento ao cliente",
+            "Contacto com órgãos públicos",
+            "Interface com a contabilidade",
+            "Compra e controlo de suprimentos"
+          ]
+        },
+        {
+          "category": "Recursos Humanos",
+          "items": [
+            "Admissão e demissão de funcionários",
+            "Folhas de pagamento",
+            "Cálculo de horas extras",
+            "Cálculo e controlo de benefícios",
+            "Cálculo e controlo de férias"
+          ]
+        },
+        {
+          "category": "Sistemas e Ferramentas",
+          "items": [
+            "Microsoft Office",
+            "Mastermaq",
+            "Linkcom",
+            "Bling",
+            "GestãoClick"
+          ]
+        }
+      ],
+      "education": [
+        {
+          "title": "Ensino Secundário Completo",
+          "date": "",
+          "institution": null,
+          "location": null,
+          "period": null,
+          "bullets": []
+        },
+        {
+          "title": "Pacote Office",
+          "date": "",
+          "institution": null
+        },
+        {
+          "title": "Sistema Mastermaq",
+          "date": "",
+          "institution": null
+        },
+        {
+          "title": "Sistemas Linkcom, Bling e GestãoClick",
+          "date": "",
+          "institution": null
+        },
+        {
+          "title": "Escrituração Fiscal e Impacto no SPED",
+          "date": "2012",
+          "institution": "SinesContábil MG"
+        },
+        {
+          "title": "Nota Fiscal Eletrónica",
+          "date": "2010",
+          "institution": "SinesContábil MG"
+        },
+        {
+          "title": "Introdução ao SPED",
+          "date": "2010",
+          "institution": "Mastermaq"
+        },
+        {
+          "title": "Crédito, Cadastro e Cobrança",
+          "date": "2008",
+          "institution": "CDL"
+        }
+      ],
+      "experience": [
+        {
+          "from": "2025-04",
+          "to": "2026-06",
+          "company": "Acrescenta Distribuidora de Alimentos Ltda.",
+          "location": null,
+          "role": "Assistente Administrativo II",
+          "period": {
+            "start": "2025-04",
+            "end": "2026-06",
+            "isCurrent": false
+          },
+          "bullets": [
+            "Efetuou a entrada e saída de notas fiscais no sistema e elaborou relatórios",
+            "Realizou lançamentos de contas a pagar e contas a receber",
+            "Manteve o cadastro de fornecedores, produtos e clientes",
+            "Controlou canhotos para acompanhamento de entregas e encaminhamento para o setor de cobranças",
+            "Emitiu e controlou boletos bancários, Realizou cobranças de títulos em atraso",
+            "Identificou falhas em notas fiscais relacionadas com a Receita Federal e efetuou as respetivas correções",
+            "Manteve contacto com órgãos públicos para resolução de problemas",
+            "Emitiu e controlou certidões negativas de débito",
+            "Efetuou cancelamentos e devoluções de notas fiscais no sistema",
+            "Apoiou o controlo de estoque por meio da emissão e consolidação de relatórios",
+            "Conferiu dados entre o estoque físico e os relatórios",
+            "Prestou atendimento ao cliente por telefone, e-mail, WhatsApp e presencialmente",
+            "Manteve interface com a contabilidade para envio e conferência de documentos",
+            "Apoiou processos de admissão e demissão, folhas de pagamento, horas extras, benefícios e férias",
+            "Negociou parcerias com fornecedores"
+          ]
+        },
+        {
+          "from": "2017-11",
+          "to": "2021-02",
+          "company": "AG3 Comércio e Transporte de Alimentos",
+          "location": null,
+          "role": "Assistente Fiscal / Assistente Administrativo",
+          "period": {
+            "start": "2017-11",
+            "end": "2021-02",
+            "isCurrent": false
+          },
+          "bullets": [
+            "Realizou a apuração dos tributos PIS, COFINS, ICMS e ICMS-ST",
+            "Efetuou a entrada e saída de notas fiscais no sistema e elaborou relatórios conforme o CFOP",
+            "Realizou lançamentos de contas a pagar",
+            "Analisou e enviou arquivos do SPED",
+            "Manteve o cadastro de fornecedores, produtos e clientes",
+            "Controlou canhotos para acompanhamento de entregas e encaminhamento para cobrança",
+            "Identificou falhas em notas fiscais e encaminhou-as para correção",
+            "Manteve contacto com vendedores para resolução de problemas",
+            "Efetuou cancelamentos e devoluções de notas fiscais no sistema",
+            "Apoiou o controlo de estoque por meio da emissão e consolidação de relatórios",
+            "Conferiu dados entre o estoque físico e os relatórios",
+            "Prestou atendimento ao cliente por telefone, e-mail, WhatsApp e presencialmente",
+            "Manteve interface com a contabilidade para envio e conferência de documentos"
+          ]
+        },
+        {
+          "from": "2014-03",
+          "to": "2017-10",
+          "company": "Uny Facas",
+          "location": null,
+          "role": "Assistente Fiscal",
+          "period": {
+            "start": "2014-03",
+            "end": "2017-10",
+            "isCurrent": false
+          },
+          "bullets": [
+            "Emitiu e enviou boletos bancários",
+            "Realizou o controlo e desconto de títulos",
+            "Efetuou a entrada e saída de notas fiscais",
+            "Prestou atendimento ao cliente por telefone, e-mail e presencialmente"
+          ]
+        },
+        {
+          "from": "2008-09",
+          "to": "2014-02",
+          "company": "Marka Comércio, Distribuição e Logística",
+          "location": null,
+          "role": "Assistente Administrativo",
+          "period": {
+            "start": "2008-09",
+            "end": "2014-02",
+            "isCurrent": false
+          },
+          "bullets": [
+            "Participou na implantação dos sistemas Mastermaq e Linkcom",
+            "Participou na implantação da nota fiscal eletrónica",
+            "Manteve o cadastro de produtos, clientes e fornecedores",
+            "Foi responsável pelas atividades de faturação da empresa",
+            "Analisou e enviou arquivos do SINTEGRA",
+            "Emitiu, conferiu e lançou notas fiscais",
+            "Emitiu e enviou boletos bancários",
+            "Efetuou cancelamentos e devoluções de notas fiscais no sistema",
+            "Realizou a compra e o controlo dos suprimentos da empresa",
+            "Executou rotinas administrativas e prestou suporte aos restantes setores",
+            "Realizou a apuração de comissões de vendas e premiações"
+          ]
+        },
+        {
+          "from": "2004",
+          "to": "2008",
+          "company": "BH Facas Ltda.",
+          "location": null,
+          "role": "Auxiliar Administrativo",
+          "period": {
+            "start": "2004",
+            "end": "2008-08",
+            "isCurrent": false
+          },
+          "bullets": [
+            "Emitiu e enviou boletos bancários",
+            "Realizou o controlo e desconto de títulos",
+            "Efetuou a entrada e saída de notas fiscais",
+            "Prestou atendimento ao cliente por telefone, e-mail e presencialmente"
+          ]
+        },
+        {
+          "from": "1996",
+          "to": "2004",
+          "company": "Painel Decorações Ltda.",
+          "location": null,
+          "role": "Auxiliar Administrativo e Financeiro",
+          "period": {
+            "start": "1996",
+            "end": "2004",
+            "isCurrent": false
+          },
+          "bullets": [
+            "Participou na implantação de sistema operacional",
+            "Conduziu atividades de contas a pagar e contas a receber",
+            "Realizou baixas no sistema, inclusão de títulos e conciliação bancária",
+            "Extraiu e analisou relatórios financeiros",
+            "Controlou e entregou benefícios e pagamentos aos funcionários",
+            "Manteve interface com a contabilidade para envio de informações da folha de pagamento",
+            "Realizou a cobrança de clientes inadimplentes conforme a política da empresa",
+            "Efetuou a apuração de comissões de vendas"
+          ]
+        }
+      ]
+    }
   }
-}

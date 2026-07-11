@@ -218,6 +218,41 @@ function renderTimelineRow(params: {
   </div>`;
 }
 
+function experienceWeight(experience: NonNullable<EuropassCvConfig['sections']['experience']>[number]): number {
+  const subtitleLength = [experience.company, experience.country].filter(Boolean).join(' - ').length;
+  const bulletWeight = (experience.bullets ?? []).reduce(
+    (total, bullet) => total + Math.max(1, Math.ceil(bullet.trim().length / 72)),
+    0
+  );
+  return 4 + Math.ceil(subtitleLength / 62) + bulletWeight;
+}
+
+function splitExperiencesForTwoPages(
+  experiences: NonNullable<EuropassCvConfig['sections']['experience']>
+): [typeof experiences, typeof experiences] {
+  if (experiences.length < 2) return [experiences, []];
+
+  const weights = experiences.map(experienceWeight);
+  const totalWeight = weights.reduce((total, weight) => total + weight, 0);
+
+  // The first page has less vertical room because it carries the full identity header.
+  const firstPageTarget = totalWeight * 0.46;
+  let accumulated = 0;
+  let bestIndex = 1;
+  let bestDistance = Number.POSITIVE_INFINITY;
+
+  for (let index = 1; index < experiences.length; index += 1) {
+    accumulated += weights[index - 1];
+    const distance = Math.abs(accumulated - firstPageTarget);
+    if (distance < bestDistance) {
+      bestDistance = distance;
+      bestIndex = index;
+    }
+  }
+
+  return [experiences.slice(0, bestIndex), experiences.slice(bestIndex)];
+}
+
 function renderEuropass2Html(config: EuropassCvConfig, rasc?: boolean): string {
   const dict = getEuropassDictionary(config.cvLanguage);
   const isPt = config.cvLanguage !== 'EN';
@@ -231,7 +266,6 @@ function renderEuropass2Html(config: EuropassCvConfig, rasc?: boolean): string {
     education: isPt ? 'Educação' : 'Education',
     skills: isPt ? 'Habilidades' : 'Skills',
     languages: isPt ? 'Linguagem' : 'Language',
-    present: isPt ? 'Presente' : 'Present',
   };
 
   const nameTokens = config.personal.name.trim().split(/\s+/).filter(Boolean);
@@ -263,9 +297,9 @@ function renderEuropass2Html(config: EuropassCvConfig, rasc?: boolean): string {
     })
     .join('');
 
-  const experienceHtml = (config.sections.experience ?? [])
+  const renderExperiences = (experiences: NonNullable<EuropassCvConfig['sections']['experience']>) => experiences
     .map((experience) => {
-      const to = experience.to?.trim() || labels.present;
+      const to = experience.to?.trim() ?? '';
       const subtitle = [experience.company?.trim(), experience.country?.trim()].filter(Boolean).join(' - ');
       return renderTimelineRow({
         dateTop: experience.from?.trim() ?? '',
@@ -276,6 +310,11 @@ function renderEuropass2Html(config: EuropassCvConfig, rasc?: boolean): string {
       });
     })
     .join('');
+
+  const [firstPageExperiences, secondPageExperiences] = splitExperiencesForTwoPages(config.sections.experience ?? []);
+  const firstPageExperienceHtml = renderExperiences(firstPageExperiences);
+  const secondPageExperienceHtml = renderExperiences(secondPageExperiences);
+  const hasSecondPage = secondPageExperiences.length > 0;
 
   const educationHtml = (config.sections.education ?? [])
     .map((education) => {
@@ -300,8 +339,9 @@ function renderEuropass2Html(config: EuropassCvConfig, rasc?: boolean): string {
   return `<!DOCTYPE html><html><head><meta charset="utf-8"><style>
   @page { size: A4; margin: 0; }
   * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; width: 210mm; height: 297mm; font-family: Arial, Helvetica, sans-serif; color: #3a4655; background: #fff; }
-  .page { width: 210mm; height: 297mm; }
+  html, body { margin: 0; padding: 0; width: 210mm; font-family: Arial, Helvetica, sans-serif; color: #3a4655; background: #fff; }
+  .page { width: 210mm; height: 297mm; overflow: hidden; break-after: page; page-break-after: always; }
+  .page:last-child { break-after: auto; page-break-after: auto; }
   .cv { display: flex; width: 100%; height: 100%; }
   .left { width: 35.75%; background: #d4dde7; padding: 34px 24px 26px; color: #5d6f87; }
   .right { width: 64.25%; background: #ffffff; padding: 0 0 28px 28.6px; position: relative; overflow: hidden; }
@@ -328,11 +368,20 @@ function renderEuropass2Html(config: EuropassCvConfig, rasc?: boolean): string {
   .timeline { position: relative; margin-left: 0; padding-left: 0; }
   .timeline::before { content: ""; position: absolute; left: 20px; top: 4px; bottom: 4px; width: 1px; background: #d2dae4; }
   .timeline-row { position: relative; display: grid; grid-template-columns: 88px 1fr; gap: 18px; margin: 0 0 14px; padding-left: 34px; }
+  .timeline-row { break-inside: avoid; page-break-inside: avoid; }
   .timeline-row::before { content: ""; position: absolute; left: 16px; top: 5px; width: 8px; height: 8px; border-radius: 999px; background: #2458b2; }
   .timeline-date { font-size: 8.8px; line-height: 1.25; color: #2d5fb3; font-weight: 700; margin-top: 1px; }
   .timeline-content { position: relative; }
   .timeline-title { font-size: 12px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.2px; color: #4f5966; font-weight: 700; }
   .timeline-subtitle { font-size: 8.8px; color: #5f6e82; font-weight: 700; margin-top: 2px; }
+  .education-timeline .timeline-row { margin-bottom: 9px; }
+  .education-timeline .timeline-title { font-size: 10.5px; }
+  .continuation-header { height: 116px; display: flex; align-items: flex-end; justify-content: space-between; margin-right: 28.6px; padding: 30px 0 17px; }
+  .continuation-kicker { color: #2d5fb3; font-size: 8px; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase; }
+  .continuation-heading { margin: 5px 0 0; color: #3b4552; font-size: 22px; font-weight: 500; }
+  .continuation-page-number { color: #a5b0bd; font-size: 11px; font-weight: 700; }
+  .page-2 .section { margin-top: 22px; }
+  @media screen { body { background: #e9edf2; } .page { margin: 0 auto 18px; background: #fff; box-shadow: 0 8px 26px rgba(49,65,85,.12); } }
   </style></head><body>${rascHtml}<div class="page"><div class="cv">
   <aside class="left">
     <div class="left-column-flow">
@@ -353,11 +402,35 @@ function renderEuropass2Html(config: EuropassCvConfig, rasc?: boolean): string {
       <img src="${europeDataUrl}" alt="" class="hero-map">
     </div>
     <div class="sections-wrap">
-      ${experienceHtml ? `<section class="section">${rightSectionTitle(labels.experience)}<div class="timeline">${experienceHtml}</div></section>` : ''}
-      ${educationHtml ? `<section class="section">${rightSectionTitle(labels.education)}<div class="timeline">${educationHtml}</div></section>` : ''}
+      ${firstPageExperienceHtml ? `<section class="section">${rightSectionTitle(labels.experience)}<div class="timeline">${firstPageExperienceHtml}</div></section>` : ''}
+      ${!hasSecondPage && educationHtml ? `<section class="section">${rightSectionTitle(labels.education)}<div class="timeline education-timeline">${educationHtml}</div></section>` : ''}
     </div>
   </main>
-  </div></div></body></html>`;
+  </div></div>${hasSecondPage ? `<div class="page page-2"><div class="cv">
+  <aside class="left">
+    <div class="left-column-flow">
+      <div class="profile-wrap">${profilePhoto}</div>
+      ${aboutText ? `<div class="left-about">${nl2br(aboutText)}</div>` : ''}
+      ${contactsHtml ? `<ul class="left-list">${contactsHtml}</ul>` : ''}
+      ${skillsHtml ? `<div class="left-rule"></div>${leftSectionTitle(labels.skills)}<ul class="left-list">${skillsHtml}</ul>` : ''}
+      ${languagesHtml ? `<div class="left-rule"></div>${leftSectionTitle(labels.languages)}<ul class="left-list">${languagesHtml}</ul>` : ''}
+      <div class="left-footer"><img src="${europeanFormatDataUrl}" alt="European format"></div>
+    </div>
+  </aside>
+  <main class="right">
+    <div class="continuation-header">
+      <div>
+        <div class="continuation-kicker">${isPt ? 'Curriculum Vitae · Continuação' : 'Curriculum Vitae · Continued'}</div>
+        <h2 class="continuation-heading">${escapeHtml(config.personal.name)}</h2>
+      </div>
+      <div class="continuation-page-number">02</div>
+    </div>
+    <div class="sections-wrap">
+      <section class="section">${rightSectionTitle(`${labels.experience} · ${isPt ? 'continuação' : 'continued'}`)}<div class="timeline">${secondPageExperienceHtml}</div></section>
+      ${educationHtml ? `<section class="section">${rightSectionTitle(labels.education)}<div class="timeline education-timeline">${educationHtml}</div></section>` : ''}
+    </div>
+  </main>
+  </div></div>` : ''}</body></html>`;
 }
 
 export function generateEuropassHtml(config: EuropassCvConfig, rasc?: boolean): string {

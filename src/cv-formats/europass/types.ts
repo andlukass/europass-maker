@@ -21,6 +21,11 @@ export interface EuropassLanguageItem {
   break?: boolean;
 }
 
+export interface EuropassTechnicalSkillGroup {
+  category: string;
+  items?: string[];
+}
+
 export interface EuropassCvConfig {
   cvKind: 'europass' | 'europass-2';
   template?: 'europass' | 'europass-2';
@@ -43,5 +48,6 @@ export interface EuropassCvConfig {
     education?: EuropassEducationItem[];
     languages?: EuropassLanguageItem[];
     skills?: string[];
+    technicalSkills?: EuropassTechnicalSkillGroup[];
   };
 }
