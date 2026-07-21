@@ -14,7 +14,7 @@
     }
   },
   "summary": {
-    "text": "Full Stack Engineer with experience in distributed backend systems and microservices-based architectures. Strong background in REST APIs, PostgreSQL schema design, Redis performance optimization, and independently deployed services communicating over HTTP. Solid foundation in object-oriented programming (C++), comfortable reading and navigating JVM-based codebases, and adapting to new stacks. Experienced in AI-driven engineering workflows to accelerate delivery, improve code quality, and optimize development throughput in production environments."
+    "text": "Full Stack Engineer focused on building production-ready applications with strong ownership from architecture to deployment. Experienced with Next.js, React, TypeScript, PostgreSQL, and Redis, delivering end-to-end systems used by real users. Background includes Web3 integrations such as on-chain automation, token allowance flows, and wallet-based interactions. Experienced in AI-assisted development workflows to accelerate delivery and improve code quality"
   },
   "sections": {
     "technicalSkills": [
@@ -24,9 +24,8 @@
           "TypeScript",
           "JavaScript",
           "SQL",
-          "C++ (OOP)",
-          "Python (basic)",
-          "JVM ecosystem (familiarity)"
+          "C++",
+          "Python (basic)"
         ]
       },
       {
@@ -35,7 +34,6 @@
           "Node.js",
           "NestJS (dependency injection, modular architecture)",
           "REST APIs",
-          "Microservices architecture",
           "HTTP-based inter-service communication",
           "Serverless (Firebase Functions)"
         ]
@@ -54,7 +52,8 @@
           "React",
           "Next.js",
           "Responsive UI",
-          "PWA (mobile-first)"
+          "PWA (mobile-first)",
+          "Figma"
         ]
       },
       {
@@ -68,11 +67,13 @@
         ]
       },
       {
-        "category": "AI Engineering",
+        "category": "AI Tooling",
         "items": [
-          "AI-assisted development workflows",
-          "Agent-based code generation",
-          "Structured code review and refinement flows"
+          "Claude Code",
+          "OpenAI Codex",
+          "Cursor",
+          "Github",
+          "Copilot"
         ]
       }
     ],
@@ -81,7 +82,10 @@
         "institution": "42 Lisboa",
         "location": "Lisbon, Portugal",
         "degree": "Software Engineering Program",
-        "period": { "start": "2023-04", "end": "2025-11" },
+        "period": {
+          "start": "2023-04",
+          "end": "2025-11"
+        },
         "bullets": [
           "C and C++ programming fundamentals",
           "Object-oriented programming and systems-level problem solving",
@@ -92,7 +96,10 @@
         "institution": "Management in IT",
         "location": "São Paulo, Brazil",
         "degree": "Technologist Degree",
-        "period": { "start": "2016-02", "end": "2018-06" },
+        "period": {
+          "start": "2016-02",
+          "end": "2018-06"
+        },
         "bullets": [
           "General concepts in programming, databases, networking, and information systems"
         ]
@@ -100,30 +107,54 @@
     ],
     "experience": [
       {
+        "company": "Vocuno",
+        "location": "Lisbon, Portugal",
+        "role": "Software Engineer (Contract)",
+        "period": {
+          "start": "2026-04",
+          "end": "2026-05",
+          "isCurrent": false
+        },
+        "bullets": [
+          "Developed end-to-end features for an AI music production platform using React, TypeScript, NestJS, Firebase Cloud Functions, Firestore, and third-party audio generation APIs",
+          "Refactored the backend architecture into domain and application layers, improving type safety, deduplication, retry handling, and centralized file management",
+          "Reduced CI/CD execution time by approximately 80%, from over 20 minutes to around 4 minutes, by optimizing build and deployment workflows",
+          "Improved product reliability by adding automated tests to CI pipelines and pre-push checks"
+        ]
+      },
+      {
         "company": "Fantasy.top",
         "location": "Lisbon, Portugal",
         "role": "Full Stack Engineer",
-        "period": { "start": "2025-04", "end": "2026-03", "isCurrent": false },
+        "period": {
+          "start": "2025-04",
+          "end": "2026-03",
+          "isCurrent": false
+        },
         "bullets": [
-          "Worked within a microservices-based backend architecture composed of independently deployed services communicating via HTTP",
-          "Developed backend-driven features including database modeling and API design, reaching 1K+ DAU at peak (10K+ daily users platform-wide)",
-          "Built performance dashboards to monitor feature usage and key product metrics",
-          "Designed and optimized PostgreSQL schemas and leveraged Redis to reduce database load under high traffic",
-          "Implemented reward distribution services and financial automation with strict SQL-based idempotency safeguards",
-          "Leveraged structured AI-assisted workflows and agent-based code generation to significantly increase productivity and accelerate feature delivery",
-          "Collaborated in production incident handling and cross-service debugging"
+          "Delivered end-to-end production features using NestJS (backend REST APIs), PostgreSQL database modeling, and NextJS frontend, used by 10K+ daily active users and reaching 1K+ DAU on individual features",
+          "Created a Node.js on-chain batch transfer automation to send 100K+ USDC with SQL-based idempotency safeguards",
+          "Replaced manual processes with a cron-driven workflow built on existing BullMQ infrastructure, consolidating validation of stats and rewards, and configuration steps into a single automated flow",
+          "Improved debugging and development workflows by integrating tools for React render inspection, building responsive UI indicators, and implementing user state simulation",
+          "Used Redis extensively to reduce load on PostgreSQL and improve performance and scalability under traffic",
+          "Developed user account deletion flow, including user deletion via Privy SDK and on-chain allowance revocation",
+          "Supported the community directly via Telegram, triaging incidents, bugs, and product feedback"
         ]
       },
       {
         "company": "Pairwire",
         "location": "Remote",
         "role": "Software Engineer",
-        "period": { "start": "2024-11", "end": "2025-03", "isCurrent": false },
+        "period": {
+          "start": "2024-11",
+          "end": "2025-03",
+          "isCurrent": false
+        },
         "bullets": [
           "Built responsive React/TypeScript interfaces from Figma (dashboards, landing pages, chat UI)",
-          "Implemented a backend file ingestion service with deterministic and AI-based processing of data",
+          "Handled UI edge cases and mobile-first responsiveness across screens",
+          "Implemented a Node.js file ingestion pipeline (split + deterministic processing + AI-assisted text extraction) with Firebase persistence",
           "Collaborated directly with the founder and a teammate to define requirements and iterate quickly in a remote environment"
-
         ]
       }
     ],
@@ -132,21 +163,14 @@
         "company": "Retail Operations SaaS (2NDLifeMobile)",
         "location": "Portugal",
         "role": "Product Builder & Full-Stack Engineer",
-        "period": { "start": "2024-03", "end": null, "isCurrent": true },
+        "period": {
+          "start": "2024-03",
+          "end": null,
+          "isCurrent": true
+        },
         "bullets": [
           "Designed and maintain a retail operations platform covering inventory, sales, commissions, dashboards, and multi-store workflows",
-          "500K+ inventory transactions processed in production with daily operational usage",
-          "Implemented CI/CD pipelines and automated cloud deployments"
-        ]
-      },
-      {
-        "company": "Mestre das Chaves SaaS",
-        "location": "Portugal",
-        "role": "Co-Builder & Full-Stack Engineer",
-        "period": { "start": "2024-11", "end": null, "isCurrent": true },
-        "bullets": [
-          "Developed a production operational management SaaS with scheduling workflows and role-based access",
-          "Maintained continuous delivery and stakeholder-driven feature evolution"
+          "500K+ inventory transactions processed in production with daily operational usage"
         ]
       }
     ]

@@ -13,37 +13,73 @@
     }
   },
   "summary": {
-"text": "Full Stack Engineer focused on building production-ready web applications with strong ownership from architecture to deployment. Experienced with Next.js, React, TypeScript, PostgreSQL, Redis, and Firebase, delivering end-to-end features across backend and frontend. Background includes Web3 integrations (wallet allowance flows and on-chain automation) and maintaining SaaS products in production with real daily users. Experienced in structured AI-assisted development workflows and agent-based code generation to accelerate development and improve implementation quality."
+    "text": "Full Stack Engineer focused on building production-ready web applications with strong ownership from architecture to deployment. Experienced with Next.js, React, TypeScript, PostgreSQL, Redis, and Firebase, delivering end-to-end features across backend and frontend. Background includes Web3 integrations (wallet allowance flows and on-chain automation) and maintaining SaaS products in production with real daily users. Experienced in structured AI-assisted development workflows and agent-based code generation to accelerate development and improve implementation quality."
   },
   "sections": {
     "technicalSkills": [
       {
         "category": "Programming Languages",
-        "items": ["TypeScript", "JavaScript", "SQL", "Python (basic)"]
+        "items": [
+          "TypeScript",
+          "JavaScript",
+          "SQL",
+          "Python (basic)"
+        ]
       },
       {
         "category": "Frontend",
-        "items": ["React", "Next.js", "PWA (mobile-first)", "Responsive UI", "Figma-to-UI implementation"]
+        "items": [
+          "React",
+          "Next.js",
+          "PWA (mobile-first)",
+          "Responsive UI",
+          "Figma"
+        ]
       },
       {
         "category": "Backend",
-        "items": ["Node.js", "NestJS", "REST APIs", "Serverless (Firebase Functions)", "Microservices"]
+        "items": [
+          "Node.js",
+          "NestJS",
+          "REST APIs",
+          "Serverless (Firebase Functions)",
+          "Microservices"
+        ]
       },
       {
         "category": "Databases & Caching",
-        "items": ["PostgreSQL", "Redis", "Cloud Firestore"]
+        "items": [
+          "PostgreSQL",
+          "Redis",
+          "Cloud Firestore"
+        ]
       },
       {
         "category": "Cloud & DevOps",
-        "items": ["AWS", "Firebase", "Docker", "GitHub Actions (CI/CD)", "Git"]
+        "items": [
+          "AWS",
+          "Firebase",
+          "Docker",
+          "GitHub Actions (CI/CD)",
+          "Git"
+        ]
       },
       {
         "category": "AI Tooling",
-        "items": ["AI-driven development workflows", "Agent-based code generation", "Agent code review and refinement"]
+        "items": [
+          "AI-driven development workflows",
+          "Agent-based code generation",
+          "Agent code review and refinement"
+        ]
       },
       {
         "category": "Web3",
-        "items": ["EVM interactions via existing ABIs", "On-chain batch automation", "Wallet integrations (allowance flows & Privy)", "Base network experience"]
+        "items": [
+          "EVM interactions via existing ABIs",
+          "On-chain batch automation",
+          "Wallet integrations (allowance flows & Privy)",
+          "Base network experience"
+        ]
       }
     ],
     "education": [
@@ -51,14 +87,22 @@
         "institution": "42 Lisboa",
         "location": "Lisbon, Portugal",
         "degree": "Software Engineering Program",
-        "period":  { "start": "2023-04", "end": "2025-11" },
-        "bullets": ["C programming fundamentals and peer-to-peer project-based learning"]
+        "period": {
+          "start": "2023-04",
+          "end": "2025-11"
+        },
+        "bullets": [
+          "C programming fundamentals and peer-to-peer project-based learning"
+        ]
       },
       {
         "institution": "Management in IT",
         "location": "São Paulo, Brazil",
         "degree": "Technologist Degree",
-        "period": { "start": "2016-02", "end": "2018-06" },
+        "period": {
+          "start": "2016-02",
+          "end": "2018-06"
+        },
         "bullets": [
           "General concepts in technology, programming, databases, networking, and information systems"
         ]
@@ -69,7 +113,11 @@
         "company": "Fantasy.top",
         "location": "Lisbon, Portugal",
         "role": "Full Stack Engineer | Web3 Integration",
-        "period": { "start": "2025-04", "end": "2026-03", "isCurrent": false },
+        "period": {
+          "start": "2025-04",
+          "end": "2026-03",
+          "isCurrent": false
+        },
         "bullets": [
           "Developed 3 game modes end-to-end (backend, database modeling, and frontend), reaching 1K+ DAU at peak; platform operated at 10K+ daily active users overall",
           "Built performance dashboards to monitor feature usage and key product metrics, interacting with independently deployed microservices and databases",
@@ -84,7 +132,11 @@
         "company": "Pairwire",
         "location": "Remote",
         "role": "Software Engineer | Frontend-focused",
-        "period": { "start": "2024-11", "end": "2025-03", "isCurrent": false },
+        "period": {
+          "start": "2024-11",
+          "end": "2025-03",
+          "isCurrent": false
+        },
         "bullets": [
           "Built responsive React/TypeScript interfaces from Figma (dashboards, landing pages, chat UI)",
           "Handled UI edge cases and mobile-first responsiveness across screens",
@@ -98,7 +150,11 @@
         "company": "Retail Operations SaaS (2NDLifeMobile)",
         "location": "Portugal",
         "role": "Product Builder & Full-Stack Engineer",
-        "period": { "start": "2024-03", "end": null, "isCurrent": true },
+        "period": {
+          "start": "2024-03",
+          "end": null,
+          "isCurrent": true
+        },
         "bullets": [
           "Production retail operations platform covering inventory, sales, commissions, dashboards, user roles, and multi-store workflows",
           "500K+ inventory transactions processed in production; used daily by store staff",
@@ -109,7 +165,11 @@
         "company": "Mestre das Chaves Saas (GrapeSoftwares)",
         "location": "Portugal",
         "role": "Co-Builder & Full-Stack Engineer",
-        "period": { "start": "2024-11", "end": null, "isCurrent": true },
+        "period": {
+          "start": "2024-11",
+          "end": null,
+          "isCurrent": true
+        },
         "bullets": [
           "Production SaaS for operational management: calendar scheduling, technician workflows, and backoffice tracking",
           "Implemented PWA mobile experience, media hosting (images/videos), and push notifications for staff",

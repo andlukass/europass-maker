@@ -14,6 +14,11 @@ npm install
 PLAYWRIGHT_BROWSERS_PATH=./.browsers npx playwright install chromium
 ```
 
+> O projeto procura o Chromium na pasta local `.browsers`. Por isso, use o
+> comando acima com `PLAYWRIGHT_BROWSERS_PATH=./.browsers`; executar apenas
+> `npx playwright install` instala os browsers no cache global e pode causar o
+> erro `Executable doesn't exist` ao gerar o PDF.
+
 ## Uso rapido
 
 ### 1) Modo interativo (Europass)
