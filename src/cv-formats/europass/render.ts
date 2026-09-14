@@ -77,7 +77,7 @@ function generateEuropassClassicHtml(config: EuropassCvConfig, rasc?: boolean): 
     ${personalItems
       .map((item) => {
         const spanClass = item.value.length > 24 ? 'col-span-2' : '';
-        return `<div class="text-[10pt] text-[#222] ${spanClass}"><span class="font-bold inline-block w-[100px]">${escapeHtml(item.label)}:</span> <span class="text-black">${escapeHtml(item.value)}</span></div>`;
+        return `<div class="text-[10pt] text-[#222] ${spanClass}"><span class="font-bold">${escapeHtml(item.label)}:</span> <span class="text-black">${escapeHtml(item.value)}</span></div>`;
       })
       .join('')}
   </div>`
