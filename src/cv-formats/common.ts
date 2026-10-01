@@ -1,1 +1,1 @@
-export type CvLanguage = 'PT' | 'EN';
+export type CvLanguage = 'PT' | 'EN' | 'ES';

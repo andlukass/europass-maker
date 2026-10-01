@@ -255,17 +255,18 @@ function splitExperiencesForTwoPages(
 
 function renderEuropass2Html(config: EuropassCvConfig, rasc?: boolean): string {
   const dict = getEuropassDictionary(config.cvLanguage);
-  const isPt = config.cvLanguage !== 'EN';
+  const isPt = config.cvLanguage !== 'EN' && config.cvLanguage !== 'ES';
+  const isEs = config.cvLanguage === 'ES';
   const photoDataUrl = config.personal.photoPath ? imageToDataUrl(config.personal.photoPath) : null;
   const europeDataUrl = imageToDataUrl('src/assets/europe.png');
   const europeanFormatDataUrl = imageToDataUrl('src/assets/european-format.png');
   const headline = config.sections.objective?.text?.trim();
   const aboutText = config.sections.presentation?.text?.trim();
   const labels = {
-    experience: isPt ? 'Experiência' : 'Experience',
-    education: isPt ? 'Educação' : 'Education',
-    skills: isPt ? 'Habilidades' : 'Skills',
-    languages: isPt ? 'Linguagem' : 'Language',
+    experience: isPt ? 'Experiência' : isEs ? 'Experiencia' : 'Experience',
+    education: isPt ? 'Educação' : isEs ? 'Educación' : 'Education',
+    skills: isPt ? 'Habilidades' : isEs ? 'Competencias' : 'Skills',
+    languages: isPt ? 'Linguagem' : isEs ? 'Idiomas' : 'Language',
   };
 
   const nameTokens = config.personal.name.trim().split(/\s+/).filter(Boolean);
@@ -420,13 +421,13 @@ function renderEuropass2Html(config: EuropassCvConfig, rasc?: boolean): string {
   <main class="right">
     <div class="continuation-header">
       <div>
-        <div class="continuation-kicker">${isPt ? 'Curriculum Vitae · Continuação' : 'Curriculum Vitae · Continued'}</div>
+        <div class="continuation-kicker">${isPt ? 'Curriculum Vitae · Continuação' : isEs ? 'Currículum Vitae · Continuación' : 'Curriculum Vitae · Continued'}</div>
         <h2 class="continuation-heading">${escapeHtml(config.personal.name)}</h2>
       </div>
       <div class="continuation-page-number">02</div>
     </div>
     <div class="sections-wrap">
-      <section class="section">${rightSectionTitle(`${labels.experience} · ${isPt ? 'continuação' : 'continued'}`)}<div class="timeline">${secondPageExperienceHtml}</div></section>
+      <section class="section">${rightSectionTitle(`${labels.experience} · ${isPt ? 'continuação' : isEs ? 'continuación' : 'continued'}`)}<div class="timeline">${secondPageExperienceHtml}</div></section>
       ${educationHtml ? `<section class="section">${rightSectionTitle(labels.education)}<div class="timeline education-timeline">${educationHtml}</div></section>` : ''}
     </div>
   </main>

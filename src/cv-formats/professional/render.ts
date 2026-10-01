@@ -5,24 +5,28 @@ import type { IconNode } from 'lucide';
 import { imageToDataUrl } from '../../render/assets.js';
 import { escapeHtml, nl2br } from '../../render/html-utils.js';
 
-function formatPeriod(period: ProfessionalPeriod | null | undefined, lang: 'PT' | 'EN'): string {
+function formatPeriod(period: ProfessionalPeriod | null | undefined, lang: 'PT' | 'EN' | 'ES'): string {
   if (!period) return '';
 
   const start = period.start?.trim();
   if (!start) return '';
 
-  const present = lang === 'PT' ? 'Atual' : 'Present';
+  const present = lang === 'PT' ? 'Atual' : lang === 'ES' ? 'Actualidad' : 'Present';
   const end = period.isCurrent ? present : period.end?.trim() || present;
-  return `${formatDateToken(start)} – ${formatDateToken(end)}`;
+  return `${formatDateToken(start, lang)} – ${formatDateToken(end, lang)}`;
 }
 
-function formatDateToken(value: string): string {
+function formatDateToken(value: string, lang: 'PT' | 'EN' | 'ES' = 'EN'): string {
   const raw = value.trim();
   if (!raw) return '';
 
   if (/^\d{4}-\d{2}$/.test(raw)) {
     const [year, month] = raw.split('-');
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const months = lang === 'ES'
+      ? ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
+      : lang === 'PT'
+        ? ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+        : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const index = Number(month) - 1;
     if (index >= 0 && index < 12) return `${months[index]} ${year}`;
   }
@@ -54,7 +58,7 @@ function iconToSvg(iconNode: IconNode, className: string): string {
 }
 
 export function generateProfessionalHtml(config: ProfessionalCvConfig): string {
-  const lang = config.cvLanguage === 'PT' ? 'PT' : 'EN';
+  const lang = config.cvLanguage === 'PT' ? 'PT' : config.cvLanguage === 'ES' ? 'ES' : 'EN';
   const cssPath = new URL('../../render/tailwind.css', import.meta.url);
   const css = readFileSync(cssPath, 'utf8');
   const photoDataUrl = config.header.photoPath ? imageToDataUrl(config.header.photoPath) : null;
@@ -85,7 +89,7 @@ export function generateProfessionalHtml(config: ProfessionalCvConfig): string {
 
   const experienceHtml = config.sections.experience?.length
     ? buildSection(
-        lang === 'PT' ? 'Experiência Profissional' : 'Work Experience',
+        lang === 'PT' ? 'Experiência Profissional' : lang === 'ES' ? 'Experiencia Profesional' : 'Work Experience',
         config.sections.experience
           .map((item) => {
             const period = formatPeriod(item.period, lang);
@@ -97,10 +101,10 @@ export function generateProfessionalHtml(config: ProfessionalCvConfig): string {
               : '';
 
             return `
-<article class="relative pr-[190px] mb-[7px] last:mb-0 break-inside-avoid [page-break-inside:avoid]">
+<article class="relative pr-[160px] mb-[7px] last:mb-0 break-inside-avoid [page-break-inside:avoid]">
   <div>
     <div class="text-[12px] font-bold text-[#2a2f35]">${escapeHtml(item.company)}</div>
-    <div class="absolute top-0 right-0 text-right w-[170px] leading-[1.2]">${locationHtml}${periodHtml}</div>
+    <div class="absolute top-0 right-0 text-right w-[140px] leading-[1.2]">${locationHtml}${periodHtml}</div>
   </div>
   <div class="mt-[2px] text-[10px] font-semibold text-[#3f454d]">${escapeHtml(item.role)}</div>
   ${
@@ -116,7 +120,7 @@ export function generateProfessionalHtml(config: ProfessionalCvConfig): string {
 
   const technicalSkillsHtml = config.sections.technicalSkills?.length
     ? buildSection(
-        lang === 'PT' ? 'Competências Técnicas' : 'Technical Skills',
+        lang === 'PT' ? 'Competências Técnicas' : lang === 'ES' ? 'Competencias Técnicas' : 'Technical Skills',
         `<div class="transform -translate-x-[190px] w-[calc(100%+24px)]"><div class="flex flex-col gap-[4px]">${config.sections.technicalSkills
           .map(
             (group) => `
@@ -131,13 +135,13 @@ export function generateProfessionalHtml(config: ProfessionalCvConfig): string {
 
   const educationHtml = config.sections.education?.length
     ? buildSection(
-        lang === 'PT' ? 'Educação' : 'Education',
+        lang === 'PT' ? 'Educação' : lang === 'ES' ? 'Educación' : 'Education',
         config.sections.education
           .map((item) => {
             const periodStart = item.period?.start?.trim();
             const periodEnd = item.period?.end?.trim();
             const periodLabel = periodStart
-              ? `${formatDateToken(periodStart)}${periodEnd ? ` – ${formatDateToken(periodEnd)}` : ''}`
+              ? `${formatDateToken(periodStart, lang)}${periodEnd ? ` – ${formatDateToken(periodEnd, lang)}` : ''}`
               : '';
             const locationHtml = item.location
               ? `<div class="text-[11px] italic text-[#1ea954]">${escapeHtml(item.location)}</div>`
@@ -147,10 +151,10 @@ export function generateProfessionalHtml(config: ProfessionalCvConfig): string {
               : '';
 
             return `
-<article class="relative pr-[190px] mb-[7px] last:mb-0 break-inside-avoid [page-break-inside:avoid]">
+<article class="relative pr-[160px] mb-[7px] last:mb-0 break-inside-avoid [page-break-inside:avoid]">
   <div>
     <div class="text-[12px] font-bold text-[#2a2f35]">${escapeHtml(item.institution)}</div>
-    <div class="absolute top-0 right-0 text-right w-[170px] leading-[1.2]">${locationHtml}${periodHtml}</div>
+    <div class="absolute top-0 right-0 text-right w-[140px] leading-[1.2]">${locationHtml}${periodHtml}</div>
   </div>
   <div class="mt-[2px] text-[10px] font-semibold text-[#3f454d]">${escapeHtml(item.degree)}</div>
   ${
@@ -166,7 +170,7 @@ export function generateProfessionalHtml(config: ProfessionalCvConfig): string {
 
   const projectsHtml = config.sections.projects?.length
     ? buildSection(
-        lang === 'PT' ? 'Projetos' : 'Projects',
+        lang === 'PT' ? 'Projetos' : lang === 'ES' ? 'Proyectos' : 'Projects',
         config.sections.projects
           .map((item) => {
             const period = formatPeriod(item.period, lang);
@@ -178,10 +182,10 @@ export function generateProfessionalHtml(config: ProfessionalCvConfig): string {
               : '';
 
             return `
-<article class="relative pr-[190px] mb-[10px] last:mb-0 break-inside-avoid [page-break-inside:avoid]">
+<article class="relative pr-[160px] mb-[10px] last:mb-0 break-inside-avoid [page-break-inside:avoid]">
   <div>
     <div class="text-[12px] font-bold text-[#2a2f35]">${escapeHtml(item.company)}</div>
-    <div class="absolute top-0 right-0 text-right w-[170px] leading-[1.2]">${locationHtml}${periodHtml}</div>
+    <div class="absolute top-0 right-0 text-right w-[140px] leading-[1.2]">${locationHtml}${periodHtml}</div>
   </div>
   <div class="mt-[2px] text-[10px] font-semibold text-[#3f454d]">${escapeHtml(item.role)}</div>
   ${

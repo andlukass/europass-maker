@@ -21,6 +21,7 @@ export async function runEuropassPrompts(): Promise<EuropassCvConfig> {
     choices: [
       { title: 'Portugues', value: 'PT' },
       { title: 'English', value: 'EN' },
+      { title: 'Español', value: 'ES' },
     ],
     initial: 0,
   });

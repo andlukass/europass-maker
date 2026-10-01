@@ -51,6 +51,23 @@ const en: EuropassDictionary = {
   skills: 'Skills',
 };
 
+const es: EuropassDictionary = {
+  draft: 'RASCUNHO',
+  birthDate: 'Fecha de nacimiento',
+  nationality: 'Nacionalidad',
+  sex: 'Sexo',
+  email: 'Correo electrónico',
+  phone: 'Teléfono',
+  whatsapp: 'WhatsApp',
+  address: 'Dirección',
+  presentation: 'Presentación',
+  objective: 'Objetivo profesional',
+  experience: 'Experiencia profesional',
+  education: 'Educación y formación',
+  languages: 'Competencias lingüísticas',
+  skills: 'Competencias',
+};
+
 export function getEuropassDictionary(lang: CvLanguage = 'PT'): EuropassDictionary {
-  return lang === 'EN' ? en : pt;
+  return lang === 'EN' ? en : lang === 'ES' ? es : pt;
 }
